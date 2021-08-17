@@ -1,0 +1,5 @@
+export { default as Header } from "./header"
+export { default as Layout } from "./layout"
+export { default as Seo } from "./seo"
+export { default as Hero } from "./Hero"
+export { default as Footer } from "./Footer"
