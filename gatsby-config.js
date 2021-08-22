@@ -43,7 +43,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`DM Sans`],
+        fonts: ["DM Sans", "Inter:300,400,400i,700"],
         display: "swap",
       },
     },

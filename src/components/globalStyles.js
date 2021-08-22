@@ -1,26 +1,17 @@
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
-    a {
-        text-decoration: none;
-        &:focus {
-            color: ${({ theme }) => theme.colors.primary}!important;
-        }
-        &:hover {
-            color: ${({ theme }) => theme.colors.primary};
-        }
-    }
-
     section {
         width: 100%;
     }
 
     .innerContainer {
-        max-width: 1280px;
+        max-width: 1400px;
         display: flex;
         align-items: center;
         margin: auto;
-        padding: 0px ${({ theme }) => theme.spacers.size32};
+        padding-left: ${({ theme }) => theme.spacers.size32};
+        padding-right: ${({ theme }) => theme.spacers.size32};
     }
 
     body {
@@ -33,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
         box-sizing: border-box;
-        font-family: ${({ theme }) => theme.typography.fontFamily};
+        font-family: Inter;
         color: ${({ theme }) => theme.colors.fontColor};
         &:focus {
             outline: 0;

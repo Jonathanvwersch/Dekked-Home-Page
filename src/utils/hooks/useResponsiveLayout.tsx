@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 
-export const BREAKPOINT_SMALL = 600
-export const BREAKPOINT_MEDIUM = 800
-export const BREAKPOINT_LARGE = 1000
+export const BREAKPOINT_SMALL = 800
+export const BREAKPOINT_MEDIUM = 1000
+export const BREAKPOINT_LARGE = 1200
 export const LAYOUT_SMALL = "small"
 export const LAYOUT_MEDIUM = "medium"
 export const LAYOUT_LARGE = "large"
@@ -18,6 +18,8 @@ const useResponsiveLayout = () => {
     else return LAYOUT_LARGE
   }
   const [layout, setLayout] = useState(appLayout())
+
+  console.log(layout)
 
   useEffect(() => {
     const handleResize = () => setLayout(appLayout())

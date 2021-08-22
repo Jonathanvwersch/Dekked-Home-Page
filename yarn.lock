@@ -4483,10 +4483,10 @@ define-property@^2.0.2:
     is-descriptor "^1.0.2"
     isobject "^3.0.1"
 
-dekked-design-system@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/dekked-design-system/-/dekked-design-system-1.3.0.tgz#622e90a541490a97296add9fc4dcbbfebc7458f6"
-  integrity sha512-qQ5oM4lKcBSXkq1u5NZ4mrhtvDpobhZzdhvcAppA0b5keFwQgHx6KuZg/R+JtRwcNSnGVmaN02XjAK9dDN32Kw==
+dekked-design-system@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/dekked-design-system/-/dekked-design-system-1.4.1.tgz#bf559e39ad5f5e7a808cf03de906db0d1727c9ed"
+  integrity sha512-iniL8IHA4MqT/f5Gsia1jGvBvLWjAJ+aVNi0IX3jSOGb70hVvhiwsJnkYBUpyt+vcPjWrzcnD6nK1/j5nTQYaw==
   dependencies:
     "@types/react-select" "^4.0.17"
     "@types/styled-components" "^5.1.12"

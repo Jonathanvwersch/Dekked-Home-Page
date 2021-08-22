@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from "react"
 import styled, { ThemeContext } from "styled-components"
-import { Link } from "gatsby"
 import {
   FullLogoIcon,
   Button,
@@ -10,8 +9,8 @@ import {
   HamburgerMenuIcon,
   IconActive,
   CloseIcon,
+  Link,
 } from "dekked-design-system"
-import AnchorLink from "react-anchor-link-smooth-scroll"
 import { useResponsiveLayout } from "../utils"
 import { LAYOUT_LARGE } from "../utils/hooks/useResponsiveLayout"
 
@@ -21,7 +20,6 @@ const Header = () => {
   const [showMenu, setShowMenu] = useState(false)
 
   useEffect(() => {
-    console.log(showMenu)
     if (layout === LAYOUT_LARGE && showMenu) {
       setShowMenu(false)
     }
@@ -30,64 +28,70 @@ const Header = () => {
   return (
     <>
       <TopBar>
-        {layout === LAYOUT_LARGE ? (
-          <>
-            <Flex alignItems="center" width="auto">
-              <Link style={{ display: "flex" }} href="/">
-                <FullLogoIcon color={theme.colors.primary} width="175px" />
-              </Link>
-              <Spacer width={theme.spacers.size32} />
-              <StyledAnchorLink href="#Features">Features</StyledAnchorLink>
-              <Spacer width={theme.spacers.size32} />
-              <StyledAnchorLink href="#Contact">Contact</StyledAnchorLink>
-            </Flex>
-            <Flex
-              alignItems="center"
-              width="auto"
-              aria-label="hello"
-              style={{ position: "sticky" }}
-            >
-              <ExternalLink href="https://app.dekked.com/login">
-                Log in
-              </ExternalLink>
-              <Spacer width={theme.spacers.size32} />
-              <ExternalLink href="https://app.dekked.com/sign-up">
-                <Button
-                  borderRadius={theme.sizes.borderRadius[SIZES.LARGE]}
-                  size={SIZES.MEDIUM}
+        <Container className="innerContainer">
+          {layout === LAYOUT_LARGE ? (
+            <>
+              <Flex alignItems="center" width="auto">
+                <StyledLink style={{ display: "flex" }} href="/">
+                  <FullLogoIcon color={theme.colors.primary} width="175px" />
+                </StyledLink>
+                <Spacer width={theme.spacers.size32} />
+                <StyledLink href="#Features">Features</StyledLink>
+                <Spacer width={theme.spacers.size32} />
+                <StyledLink href="#Contact">Contact</StyledLink>
+              </Flex>
+              <Flex
+                alignItems="center"
+                width="auto"
+                aria-label="hello"
+                style={{ position: "sticky" }}
+              >
+                <StyledLink
                   fontSize={theme.typography.fontSizes.size18}
+                  href="https://app.dekked.com/login"
                 >
-                  Sign up
-                </Button>
-              </ExternalLink>
+                  Log in
+                </StyledLink>
+                <Spacer width={theme.spacers.size32} />
+                <StyledLink
+                  fontSize={theme.typography.fontSizes.size18}
+                  href="https://app.dekked.com/sign-up"
+                >
+                  <Button
+                    borderRadius={theme.sizes.borderRadius[SIZES.LARGE]}
+                    size={SIZES.MEDIUM}
+                    fontSize={theme.typography.fontSizes.size18}
+                  >
+                    Sign up
+                  </Button>
+                </StyledLink>
+              </Flex>
+            </>
+          ) : (
+            <Flex alignItems="center" justifyContent="space-between">
+              <StyledLink style={{ display: "flex" }} href="/">
+                <FullLogoIcon color={theme.colors.primary} width="175px" />
+              </StyledLink>
+              <IconActive
+                handleClick={() => setShowMenu(prevState => !prevState)}
+              >
+                {showMenu ? (
+                  <CloseIcon size="40px" />
+                ) : (
+                  <HamburgerMenuIcon size="40px" />
+                )}
+              </IconActive>
             </Flex>
-          </>
-        ) : (
-          <Flex alignItems="center" justifyContent="space-between">
-            <Link style={{ display: "flex" }} href="/">
-              <FullLogoIcon color={theme.colors.primary} width="175px" />
-            </Link>
-            <IconActive
-              handleClick={() => setShowMenu(prevState => !prevState)}
-            >
-              {showMenu ? (
-                <CloseIcon size="40px" />
-              ) : (
-                <HamburgerMenuIcon size="40px" />
-              )}
-            </IconActive>
-          </Flex>
-        )}
+          )}{" "}
+        </Container>
       </TopBar>
       {showMenu ? (
         <HiddenMenu>
-          <StyledAnchorLink href="#Features">Features</StyledAnchorLink>
-          <StyledAnchorLink href="#Contact">Contact</StyledAnchorLink>
-          <ExternalLink href="https://app.dekked.com/login">
-            Log in
-          </ExternalLink>
+          <StyledLink href="#Features">Features</StyledLink>
+          <StyledLink href="#Contact">Contact</StyledLink>
+          <StyledLink href="https://app.dekked.com/login">Log in</StyledLink>
           <Spacer height={theme.spacers.size64} />
-          <ExternalLink href="https://app.dekked.com/sign-up">
+          <StyledLink href="https://app.dekked.com/sign-up">
             <Button
               fullWidth
               borderRadius={theme.sizes.borderRadius[SIZES.LARGE]}
@@ -96,19 +100,14 @@ const Header = () => {
             >
               Sign up
             </Button>
-          </ExternalLink>
+          </StyledLink>
         </HiddenMenu>
       ) : null}
     </>
   )
 }
 
-const ExternalLink = styled.a`
-  font-size: ${({ theme }) => theme.typography.fontSizes.size18};
-  cursor: pointer;
-`
-
-const StyledAnchorLink = styled(AnchorLink)`
+const StyledLink = styled(Link)`
   font-size: ${({ theme }) => theme.typography.fontSizes.size18};
 `
 
@@ -130,15 +129,16 @@ const HiddenMenu = styled.nav`
   }
 `
 
-const TopBar = styled.nav`
+const Container = styled.div`
   width: 100%;
-  margin: auto;
   min-height: 104px;
-  max-width: 1280px;
   display: flex;
   justify-content: space-between;
+
   padding: ${({ theme }) => theme.spacers.size32}
     ${({ theme }) => theme.spacers.size32};
 `
+
+const TopBar = styled.nav``
 
 export default Header
