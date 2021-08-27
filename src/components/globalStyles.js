@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     .innerContainer {
-        max-width: 1400px;
+        max-width: 1450px;
         display: flex;
         align-items: center;
         margin: auto;
@@ -20,6 +20,19 @@ const GlobalStyle = createGlobalStyle`
         min-height: 100vh;
         min-height: -webkit-fill-available;
     }
+
+    .hidden {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s 1s, opacity 1s linear;
+    }
+
+    .visible {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 1s linear;
+    }
+
 
     * {
         margin: 0;

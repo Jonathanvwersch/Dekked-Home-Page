@@ -3,7 +3,7 @@ import { SvgVaried } from "dekked-design-system"
 
 const SantanderIcon: React.FC = () => {
   return (
-    <SvgVaried x="0px" y="0px" viewBox="0 0 240.5 45.5" width="175px">
+    <SvgVaried x="0px" y="0px" viewBox="0 0 240.5 45.5" width="150px">
       <title>Santander</title>
       <g>
         <path

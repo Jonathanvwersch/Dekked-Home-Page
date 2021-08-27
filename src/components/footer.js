@@ -37,14 +37,14 @@ const Footer = () => {
     <Link
       fontColor="white"
       fontSize={theme.typography.fontSizes.size14}
-      href="www.dekked.com/legal"
+      href="https://dekked.com/legal"
     >
       Privacy policy
     </Link>
   )
 
   return (
-    <FooterContainer id="#Contact">
+    <FooterContainer id="contact">
       <Box className="innerContainer">
         <StyledFooter>
           {isLayoutSmall ? (
@@ -57,20 +57,16 @@ const Footer = () => {
                 <FullLogoIcon color="white" width="120px" />
               </Link>
               <Flex justifyContent="center">
-                <Link href="www.twitter.com/dekkedapp">
+                <Link href="https://twitter.com/dekkedapp">
                   <TwitterIcon color="white" size={SIZES.XLARGE} />
                 </Link>
                 <Spacer width={theme.spacers.size24} />
-                <Link>
+                <Link href="https://facebook.com/dekkedapp">
                   <FacebookIcon color="white" size={SIZES.XLARGE} />
                 </Link>
                 <Spacer width={theme.spacers.size24} />
-                <Link>
+                <Link href="https://www.linkedin.com/company/dekked">
                   <LinkedinIcon color="white" size={SIZES.XLARGE} />
-                </Link>
-                <Spacer width={theme.spacers.size24} />
-                <Link>
-                  <DiscordIcon color="white" size={SIZES.XLARGE} />
                 </Link>
                 <Spacer width={theme.spacers.size24} />
                 <Link href="mailto:team@dekked.app">
@@ -110,6 +106,7 @@ const Footer = () => {
                   >
                     <Link
                       href="mailto:team@dekked.app"
+                      target="_blank"
                       fontColor="white"
                       fontSize={theme.typography.fontSizes.size14}
                     >
@@ -122,7 +119,7 @@ const Footer = () => {
                   flexDirection="column"
                   alignItems="flex-start"
                   mr={theme.spacers.size32}
-                  height="100%"
+                  height="auto"
                 >
                   <H3 fontColor="white" styledAs="h6">
                     Follow us
@@ -137,28 +134,23 @@ const Footer = () => {
                     <Link
                       fontColor="white"
                       fontSize={theme.typography.fontSizes.size14}
-                      href="www.facebook.com"
+                      href="https://facebook.com/dekkedapp"
                     >
                       Facebook
                     </Link>
+                    <Spacer height={theme.spacers.size16} />
                     <Link
                       fontColor="white"
                       fontSize={theme.typography.fontSizes.size14}
-                      href="www.linkedin.com"
+                      href="https://www.linkedin.com/company/dekked"
                     >
                       LinkedIn
                     </Link>
+                    <Spacer height={theme.spacers.size16} />
                     <Link
                       fontColor="white"
                       fontSize={theme.typography.fontSizes.size14}
-                      href="www.discord.com"
-                    >
-                      Discord
-                    </Link>
-                    <Link
-                      fontColor="white"
-                      fontSize={theme.typography.fontSizes.size14}
-                      href="www.twitter.com"
+                      href="https://twitter.com/dekkedapp"
                     >
                       Twitter
                     </Link>
@@ -183,10 +175,10 @@ const Footer = () => {
 const StyledFooter = styled.div`
   display: flex;
   align-items: flex-start;
-  padding-top: ${({ theme }) => theme.spacers.size32};
-  padding-bottom: ${({ theme }) => theme.spacers.size32};
+  padding-top: ${({ theme }) => theme.spacers.size64};
+  padding-bottom: ${({ theme }) => theme.spacers.size64};
   width: 100%;
-  height: 220px;
+  height: 284px;
 `
 const FooterContainer = styled.footer`
   background: ${({ theme }) => theme.colors.fontColor};

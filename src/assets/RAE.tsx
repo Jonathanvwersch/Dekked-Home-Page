@@ -7,7 +7,7 @@ const RAE: React.FC = () => {
       x="0px"
       y="0px"
       viewBox="0 0 3508.000000 958.000000"
-      width="175px"
+      width="150px"
     >
       <g
         transform="translate(0.000000,958.000000) scale(0.100000,-0.100000)"

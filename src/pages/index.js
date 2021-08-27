@@ -6,6 +6,8 @@ import {
   GetStarted,
   SignUp,
   MeetTheTeam,
+  Testimonials,
+  Features,
 } from "../components"
 import { theme } from "dekked-design-system"
 import { ThemeProvider } from "styled-components"
@@ -15,8 +17,10 @@ const IndexPage = () => (
     <Layout>
       <Seo title="Dekked" />
       <Hero />
-      <MeetTheTeam />
       <GetStarted />
+      <Features />
+      <Testimonials />
+      {/* <MeetTheTeam /> */}
       <SignUp />
     </Layout>
   </ThemeProvider>

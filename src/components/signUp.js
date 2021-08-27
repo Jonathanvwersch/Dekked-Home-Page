@@ -1,55 +1,70 @@
 import React, { useContext } from "react"
-import styled, { ThemeContext } from "styled-components"
-import {
-  H1,
-  Spacer,
-  H2,
-  Box,
-  Flex,
-  Button,
-  SIZES,
-  Text,
-  H3,
-} from "dekked-design-system"
-import { SantanderIcon, DffrntIcon, Acclr8Icon, UOBIcon } from "../assets"
+import { ThemeContext } from "styled-components"
+import { Spacer, H2, Flex, Button, SIZES, Text } from "dekked-design-system"
 import { useResponsiveLayout } from "../utils/hooks"
-import { LAYOUT_LARGE } from "../utils/hooks/useResponsiveLayout"
+import { LAYOUT_SMALL, LAYOUT_XLARGE } from "../utils/hooks/useResponsiveLayout"
 import SignUpImage from "../assets/SignUp.png"
 
 const SignUp = () => {
   const theme = useContext(ThemeContext)
   const layout = useResponsiveLayout()
-  const isLayoutNotLarge = !(layout === LAYOUT_LARGE)
+  const isLayoutNotXLarge = !(layout === LAYOUT_XLARGE)
+  const isLayoutSmall = layout === LAYOUT_SMALL
 
   return (
-    <Box pt={theme.spacers.size80}>
-      <Flex className="innerContainer">
-        <Flex flexDirection="column">
-          <H2 styledAs="h1">So what are you waiting for?</H2>
+    <section>
+      <Flex
+        mb={isLayoutNotXLarge ? theme.spacers.size64 : undefined}
+        flexDirection={isLayoutNotXLarge ? "column" : "row"}
+        className="innerContainer"
+        pt={theme.spacers.size128}
+        pb={!isLayoutSmall ? theme.spacers.size128 : undefined}
+      >
+        <Flex
+          flexDirection="column"
+          width={!isLayoutNotXLarge ? "40%" : undefined}
+          alignItems={isLayoutNotXLarge ? "center" : "flex-start"}
+        >
+          <H2
+            textAlign={isLayoutNotXLarge && "center"}
+            styledAs={isLayoutSmall ? "h3" : "h1"}
+          >
+            So what are you waiting for?
+          </H2>
           <Spacer height={theme.spacers.size16} />
-          <Text as="p" fontSize={theme.typography.fontSizes.size22}>
+          <Text
+            textAlign={isLayoutNotXLarge && "center"}
+            as="p"
+            fontSize={
+              isLayoutSmall
+                ? theme.typography.fontSizes.size18
+                : theme.typography.fontSizes.size22
+            }
+          >
             Join Dekked today to start studying smarter
           </Text>
           <Spacer height={theme.spacers.size32} />
           <Button
             as="a"
             borderRadius={theme.sizes.borderRadius[SIZES.LARGE]}
-            size={SIZES.LARGE}
+            size={SIZES.XLARGE}
             fontSize={theme.typography.fontSizes.size20}
             href="https://app.dekked.com/sign-up"
           >
             Try Dekked for free
           </Button>
-          <Spacer height={theme.spacers.size64} />
-          <Image src={SignUpImage} alt="Sign up with Dekked" />
+          {isLayoutNotXLarge && <Spacer height={theme.spacers.size64} />}
         </Flex>
+        {!isLayoutSmall && (
+          <img
+            src={SignUpImage}
+            alt="Sign up with Dekked"
+            style={{ width: isLayoutNotXLarge ? "80%" : "60%" }}
+          />
+        )}
       </Flex>
-    </Box>
+    </section>
   )
 }
-
-const Image = styled.img`
-  width: 100%;
-`
 
 export default SignUp

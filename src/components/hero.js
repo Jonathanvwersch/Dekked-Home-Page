@@ -1,5 +1,5 @@
-import React, { useContext, useState, useEffect } from "react"
-import styled, { ThemeContext } from "styled-components"
+import React, { useContext, useState } from "react"
+import styled, { ThemeContext, keyframes } from "styled-components"
 import {
   H1,
   Spacer,
@@ -13,56 +13,64 @@ import {
 import Hero1 from "../assets/Hero1.jpeg"
 import Hero2 from "../assets/Hero2.jpeg"
 import Hero3 from "../assets/Hero3.jpeg"
-import { keyframes } from "styled-components"
+import Typist from "react-typist"
+import { TypistLoop } from "./"
 
-import { SantanderIcon, DffrntIcon, Acclr8Icon, UOBIcon, RAE } from "../assets"
+import { SantanderIcon, DffrntIcon, Acclr8Icon, RAE } from "../assets"
 import { useResponsiveLayout } from "../utils/hooks"
-import { LAYOUT_LARGE } from "../utils/hooks/useResponsiveLayout"
+import { LAYOUT_XLARGE, LAYOUT_SMALL } from "../utils/hooks/useResponsiveLayout"
 
 const Hero = () => {
   const theme = useContext(ThemeContext)
   const layout = useResponsiveLayout()
-  const isLayoutNotLarge = !(layout === LAYOUT_LARGE)
+  const isLayoutNotXLarge = !(layout === LAYOUT_XLARGE)
+  const isLayoutSmall = layout === LAYOUT_SMALL
   const [index, setIndex] = useState(0)
-
   const animatedText = ["take notes", "create flashcards", "study"]
   const heroImages = [Hero1, Hero2, Hero3]
 
-  useEffect(() => {
-    const timeout = setInterval(() => {
-      setIndex(prevState => prevState + 1)
-    }, 5000)
-
-    return () => clearInterval(timeout)
-  }, [index])
-
   return (
     <MainHero>
-      <Flex
+      <StyledHero
         className="innerContainer"
-        pt={theme.spacers.size128}
-        flexDirection={isLayoutNotLarge ? "column" : "row"}
-        alignItems="flex-start"
-        pb={theme.spacers.size64}
+        pb={isLayoutSmall ? theme.spacers.size64 : theme.spacers.size128}
+        pt={isLayoutSmall ? "128px" : "200px"}
+        flexDirection={isLayoutNotXLarge ? "column" : "row"}
       >
         <Flex
-          width={isLayoutNotLarge ? "100%" : "45%"}
+          alignItems={isLayoutNotXLarge ? "center" : "flex-start"}
+          width={isLayoutNotXLarge ? "100%" : "45%"}
           flexDirection="column"
-          alignItems={isLayoutNotLarge ? "center" : "flex-start"}
-          mr={!isLayoutNotLarge && theme.spacers.size32}
+          mr={!isLayoutNotXLarge && theme.spacers.size32}
           style={{
-            textAlign: isLayoutNotLarge && "center",
-            maxWidth: isLayoutNotLarge && "600px",
+            textAlign: isLayoutNotXLarge && "center",
+            maxWidth: isLayoutNotXLarge && "600px",
           }}
         >
-          <H1 styledAs="h1">
+          <H1 styledAs={isLayoutSmall ? "h3" : "h1"}>
             A more efficient way to&nbsp;
-            <AnimatedText style={{ color: theme.colors.primary }}>
-              {animatedText[index % animatedText.length]}
-            </AnimatedText>
+            <TypistLoop interval={500} index={index} setIndex={setIndex}>
+              {animatedText.map(text => (
+                <Typist
+                  key={text}
+                  style={{ display: "inline" }}
+                  startDelay={500}
+                >
+                  <AnimatedText style={{ color: theme.colors.primary }}>
+                    {text}
+                  </AnimatedText>
+                  <Typist.Backspace
+                    delay={4500}
+                    count={text.length}
+                    style={{ display: "inline" }}
+                  />
+                </Typist>
+              ))}
+            </TypistLoop>
+            <BlinkingCursor>|</BlinkingCursor>
           </H1>
           <Spacer height={theme.spacers.size32} />
-          <H2 styledAs="h5" fontWeight="normal">
+          <H2 styledAs={isLayoutSmall ? "h6" : "h5"} fontWeight="normal">
             Create notes and flashcards that are linked to one another. Then
             study them with or without spaced repetition.
           </H2>
@@ -71,47 +79,39 @@ const Hero = () => {
             as="a"
             borderRadius={theme.sizes.borderRadius[SIZES.LARGE]}
             fontSize={theme.typography.fontSizes.size18}
-            size={SIZES.LARGE}
+            size={SIZES.XLARGE}
             width="200px"
             href="https://app.dekked.com/sign-up"
           >
             Get started for free
           </Button>
+          {isLayoutNotXLarge && <Spacer height={theme.spacers.size48} />}
         </Flex>
         <Box
-          width={isLayoutNotLarge ? "100%" : "55%"}
-          ml={!isLayoutNotLarge && theme.spacers.size32}
-          mb={isLayoutNotLarge && theme.spacers.size64}
+          width={isLayoutNotXLarge ? "100%" : "55%"}
+          ml={!isLayoutNotXLarge && theme.spacers.size32}
         >
           <HeroImage
             src={heroImages[index % heroImages.length]}
-            alt={index % animatedText[index]}
+            alt="Hero image"
           />
         </Box>
-      </Flex>
+      </StyledHero>
       <SubHero className="innerContainer">
         <H3 styledAs="h6" fontColor={theme.colors.grey1}>
           Supported by
         </H3>
-        <Flex
-          width="100%"
-          justifyContent="space-evenly"
-          flexWrap="wrap"
-          pb={theme.spacers.size32}
-        >
-          <Box p={theme.spacers.size8}>
+        <Flex width="100%" justifyContent="space-evenly" flexWrap="wrap">
+          <Box p={theme.spacers.size16}>
             <SantanderIcon />
           </Box>
-          <Box p={theme.spacers.size8}>
+          <Box p={theme.spacers.size8} pb={theme.spacers.size16}>
             <DffrntIcon />
           </Box>
-          <Box p={theme.spacers.size8}>
+          <Box p={theme.spacers.size8} pb={theme.spacers.size16}>
             <Acclr8Icon />
           </Box>
-          <Box p={theme.spacers.size8}>
-            <UOBIcon />
-          </Box>
-          <Box p={theme.spacers.size8}>
+          <Box p={theme.spacers.size8} pb={theme.spacers.size16}>
             <RAE />
           </Box>
         </Flex>
@@ -120,6 +120,8 @@ const Hero = () => {
   )
 }
 
+const StyledHero = styled(Flex)``
+
 const HeroImage = styled.img`
   border-radius: 10px;
   box-shadow: ${({ theme }) => theme.boxShadow};
@@ -127,25 +129,35 @@ const HeroImage = styled.img`
   width: 100%;
 `
 
-const heroAnimation = keyframes`
-  80% {transform: translate3d(0,0,0);opacity:1; }
-  80% {opacity:0; }
-  100% {transform: translate3d(0,100%,0); transition: all .7s cubic-bezier(.77,0,0.18,1); opacity:0;}
-`
 const AnimatedText = styled.span`
-  // animation: ${heroAnimation} 5s infinite;
   display: inline-block;
+`
+
+const heroAnimation = keyframes`
+  0% {
+   visibility: hidden;
+  }
+
+  50% {
+    visibility: visible;
+  }
+ 
+`
+
+const BlinkingCursor = styled.span`
+  animation: ${heroAnimation} 1s infinite step-end;
+  font-weight: 100;
+  color: #2e3d48;
 `
 
 const SubHero = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: ${({ theme }) => theme.spacers.size64};
 `
 
 const MainHero = styled.section`
-  padding-bottom: ${({ theme }) => theme.spacers.size128};
+  padding-bottom: ${({ theme }) => theme.spacers.size80};
   background-repeat: no-repeat;
   background-size: cover;
   background: linear-gradient(
@@ -153,6 +165,14 @@ const MainHero = styled.section`
     rgba(255, 255, 255, 1) 50%,
     rgba(202, 245, 252, 1) 100%
   );
+
+  .Cursor {
+    display: none;
+  }
+
+  .Typist {
+    display: inline;
+  }
 `
 
 export default Hero
