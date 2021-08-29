@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react"
-import Header from "./header"
-import Footer from "./footer"
+import { Header, Footer, GlobalStyle } from "./"
 import { FullPageLoadingSpinner } from "dekked-design-system"
-import GlobalStyle from "./GlobalStyles"
 
 const Layout = ({ children, noFooterHeader }) => {
   const [loading, setLoading] = useState(true)
