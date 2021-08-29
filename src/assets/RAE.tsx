@@ -1,7 +1,7 @@
 import React from "react"
 import { SvgVaried } from "dekked-design-system"
 
-const RAE: React.FC = () => {
+const Rae: React.FC = () => {
   return (
     <SvgVaried
       x="0px"
@@ -296,4 +296,4 @@ l62 -132 638 811 c351 446 643 813 648 817 11 6 4192 -1890 4196 -1903 2 -5
   )
 }
 
-export default RAE
+export default Rae

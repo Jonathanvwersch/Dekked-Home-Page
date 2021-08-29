@@ -2,7 +2,6 @@ import React, { useContext } from "react"
 import styled, { ThemeContext } from "styled-components"
 import { H3, Flex, Text, Spacer } from "dekked-design-system"
 import { useResponsiveLayout } from "../utils/hooks"
-import Hero1 from "../assets/Hero1.jpeg"
 
 import {
   LAYOUT_LARGE,
@@ -59,16 +58,40 @@ const Features = () => {
               platform
             </Text>
           </Flex>
-          <Flex flex="1.5 0 0">
-            <Image src={Hero1} />
+          <Flex
+            flex="1.5 0 0"
+            overflow="hidden"
+            style={{ borderRadius: "16px" }}
+          >
+            <Video
+              src="https://dekked-landing-page.s3.eu-west-2.amazonaws.com/images2/Video1.mp4"
+              muted
+              playsInline
+              loop
+              controls={false}
+              autoPlay="autoplay"
+              style={{ marginTop: "-2px" }}
+            />
           </Flex>
         </Flex>
         <Flex
           mb={theme.spacers.size80}
           flexDirection={isLayoutXLarge ? "row" : "column-reverse"}
         >
-          <Flex flex="1.5 0 0">
-            <Image src={Hero1} />
+          <Flex
+            flex="1.5 0 0"
+            overflow="hidden"
+            style={{ borderRadius: "16px" }}
+          >
+            <Video
+              src="https://dekked-landing-page.s3.eu-west-2.amazonaws.com/images2/Video2.mp4"
+              muted
+              playsInline
+              loop
+              controls={false}
+              autoPlay="autoplay"
+              style={{ marginTop: "-2px", marginBottom: "-16px" }}
+            />
           </Flex>
           <Flex
             flexDirection="column"
@@ -133,13 +156,37 @@ const Features = () => {
               efficient form of learning
             </Text>
           </Flex>
-          <Flex flex="1.5 0 0">
-            <Image src={Hero1} />
+          <Flex
+            flex="1.5 0 0"
+            overflow="hidden"
+            style={{ borderRadius: "16px" }}
+          >
+            <Video
+              src="https://dekked-landing-page.s3.eu-west-2.amazonaws.com/images2/Video3.mp4"
+              muted
+              playsInline
+              loop
+              controls={false}
+              autoPlay="autoplay"
+              style={{ marginTop: "-2px", marginBottom: "-10px" }}
+            />
           </Flex>
         </Flex>
         <Flex flexDirection={isLayoutXLarge ? "row" : "column-reverse"}>
-          <Flex flex="1.5 0 0">
-            <Image src={Hero1} />
+          <Flex
+            flex="1.5 0 0"
+            overflow="hidden"
+            style={{ borderRadius: "16px" }}
+          >
+            <Video
+              src="https://dekked-landing-page.s3.eu-west-2.amazonaws.com/images2/Video4.mp4"
+              muted
+              playsInline
+              loop
+              controls={false}
+              autoPlay="autoplay"
+              style={{ marginTop: "-2px", marginBottom: "-16px" }}
+            />
           </Flex>
           <Flex
             flexDirection="column"
@@ -176,9 +223,7 @@ const Features = () => {
   )
 }
 
-const Image = styled.img`
-  margin-bottom: ${({ theme }) => theme.spacers.size32};
-  border-radius: 16px;
+const Video = styled.video`
   width: 100%;
 `
 

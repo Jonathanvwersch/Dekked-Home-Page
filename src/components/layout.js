@@ -4,7 +4,7 @@ import Footer from "./footer"
 import { FullPageLoadingSpinner } from "dekked-design-system"
 import GlobalStyle from "./GlobalStyles"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, noFooterHeader }) => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -18,9 +18,9 @@ const Layout = ({ children }) => {
         <FullPageLoadingSpinner />
       ) : (
         <>
-          <Header />
+          {!noFooterHeader && <Header />}
           <main>{children}</main>
-          <Footer />
+          {!noFooterHeader && <Footer />}
         </>
       )}
     </>

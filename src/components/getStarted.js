@@ -2,9 +2,6 @@ import React, { useContext } from "react"
 import styled, { ThemeContext } from "styled-components"
 import { Spacer, H2, Flex, Text, H3 } from "dekked-design-system"
 import { useResponsiveLayout } from "../utils/hooks"
-import SignUp from "../assets/GetStartedSignUp.png"
-import Create from "../assets/GetStartedCreate.png"
-import Study from "../assets/GetStartedStudy.png"
 import { LAYOUT_SMALL, LAYOUT_XLARGE } from "../utils/hooks/useResponsiveLayout"
 
 const GetStarted = () => {
@@ -38,7 +35,7 @@ const GetStarted = () => {
             pb={theme.spacers.size64}
           >
             <Image
-              src={SignUp}
+              src="https://dekked-landing-page.s3.eu-west-2.amazonaws.com/images2/GetStarted1.png"
               alt="Sign up"
               height={isLayoutSmall ? "150px" : "200px"}
             />
@@ -59,7 +56,7 @@ const GetStarted = () => {
             pb={theme.spacers.size64}
           >
             <Image
-              src={Create}
+              src="https://dekked-landing-page.s3.eu-west-2.amazonaws.com/images2/GetStarted2.png"
               alt="Create flashcards and notes"
               height={isLayoutSmall ? "150px" : "200px"}
             />
@@ -80,7 +77,7 @@ const GetStarted = () => {
             pb={theme.spacers.size64}
           >
             <Image
-              src={Study}
+              src="https://dekked-landing-page.s3.eu-west-2.amazonaws.com/images2/GetStarted3.png"
               alt="Study smarter"
               height={isLayoutSmall ? "150px" : "200px"}
             />

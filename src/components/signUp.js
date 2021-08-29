@@ -3,7 +3,6 @@ import { ThemeContext } from "styled-components"
 import { Spacer, H2, Flex, Button, SIZES, Text } from "dekked-design-system"
 import { useResponsiveLayout } from "../utils/hooks"
 import { LAYOUT_SMALL, LAYOUT_XLARGE } from "../utils/hooks/useResponsiveLayout"
-import SignUpImage from "../assets/SignUp.png"
 
 const SignUp = () => {
   const theme = useContext(ThemeContext)
@@ -12,12 +11,17 @@ const SignUp = () => {
   const isLayoutSmall = layout === LAYOUT_SMALL
 
   return (
-    <section>
+    <section
+      style={{
+        background:
+          "linear-gradient(180deg,rgba(202, 245, 252, 1) 50%,rgba(255, 255, 255, 1) 100%)",
+      }}
+    >
       <Flex
         mb={isLayoutNotXLarge ? theme.spacers.size64 : undefined}
         flexDirection={isLayoutNotXLarge ? "column" : "row"}
         className="innerContainer"
-        pt={theme.spacers.size128}
+        pt={isLayoutSmall ? theme.spacers.size64 : theme.spacers.size128}
         pb={!isLayoutSmall ? theme.spacers.size128 : undefined}
       >
         <Flex
@@ -57,7 +61,7 @@ const SignUp = () => {
         </Flex>
         {!isLayoutSmall && (
           <img
-            src={SignUpImage}
+            src="https://dekked-landing-page.s3.eu-west-2.amazonaws.com/images2/SignUp.png"
             alt="Sign up with Dekked"
             style={{ width: isLayoutNotXLarge ? "80%" : "60%" }}
           />

@@ -1,14 +1,19 @@
 import * as React from "react"
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { NotFound } from "../components"
+import { ThemeProvider } from "styled-components"
+import { theme } from "dekked-design-system"
 
-const NotFoundPage = () => (
-  <Layout>
-    <Seo title="404: Not found" />
-    <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
-)
+const NotFoundPage = () => {
+  return (
+    <ThemeProvider theme={theme()}>
+      <Layout noFooterHeader>
+        <Seo title="404: Not found" />
+        <NotFound />
+      </Layout>
+    </ThemeProvider>
+  )
+}
 
 export default NotFoundPage

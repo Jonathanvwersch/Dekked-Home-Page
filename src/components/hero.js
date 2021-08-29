@@ -16,7 +16,7 @@ import Hero3 from "../assets/Hero3.jpeg"
 import Typist from "react-typist"
 import { TypistLoop } from "./"
 
-import { SantanderIcon, DffrntIcon, Acclr8Icon, RAE } from "../assets"
+import { SantanderIcon, DffrntIcon, Acclr8Icon, Rae } from "../assets"
 import { useResponsiveLayout } from "../utils/hooks"
 import { LAYOUT_XLARGE, LAYOUT_SMALL } from "../utils/hooks/useResponsiveLayout"
 
@@ -112,7 +112,7 @@ const Hero = () => {
             <Acclr8Icon />
           </Box>
           <Box p={theme.spacers.size8} pb={theme.spacers.size16}>
-            <RAE />
+            <Rae />
           </Box>
         </Flex>
       </SubHero>
@@ -147,7 +147,7 @@ const heroAnimation = keyframes`
 const BlinkingCursor = styled.span`
   animation: ${heroAnimation} 1s infinite step-end;
   font-weight: 100;
-  color: #2e3d48;
+  color: ${({ theme }) => theme.colors.fontColor};
 `
 
 const SubHero = styled.section`

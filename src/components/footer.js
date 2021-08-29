@@ -10,11 +10,9 @@ import {
   Box,
   TwitterIcon,
   LinkedinIcon,
-  DiscordIcon,
   FacebookIcon,
   EmailIcon,
   SIZES,
-  IconActive,
 } from "dekked-design-system"
 import { LAYOUT_SMALL } from "../utils/hooks/useResponsiveLayout"
 

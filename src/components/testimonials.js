@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import styled, { ThemeContext } from "styled-components"
-import { Spacer, H2, Flex, Text, H3, ShadowCard } from "dekked-design-system"
+import { Spacer, H2, Flex, Text } from "dekked-design-system"
 import { useResponsiveLayout } from "../utils/hooks"
 import QuoteMarkBig from "../assets/QuoteMarkBig.svg"
 import QuoteMarkSmall from "../assets/QuoteMarkSmall.svg"
@@ -42,7 +42,7 @@ const Testimonials = () => {
 
 const Container = styled.section`
   padding-bottom: ${({ theme }) => theme.spacers.size80};
-  padding-top: ${({ theme }) => theme.spacers.size48};
+  padding-top: ${({ theme }) => theme.spacers.size64};
 
   .QuoteMark {
     width: 100px !important;
