@@ -13,7 +13,7 @@ import { ThemeContext } from "styled-components"
 import { LAYOUT_MEDIUM, LAYOUT_SMALL } from "../utils/hooks/useResponsiveLayout"
 import { useResponsiveLayout } from "../utils/hooks"
 
-const NotFound = () => {
+const NotFoundBlock = () => {
   const theme = React.useContext(ThemeContext)
   const layout = useResponsiveLayout()
   const isSmallOrMedium = layout === LAYOUT_SMALL || layout === LAYOUT_MEDIUM
@@ -57,4 +57,4 @@ const NotFound = () => {
   )
 }
 
-export default NotFound
+export default NotFoundBlock

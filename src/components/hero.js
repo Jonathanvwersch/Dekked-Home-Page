@@ -14,7 +14,7 @@ import Hero1 from "../assets/Hero1.jpeg"
 import Hero2 from "../assets/Hero2.jpeg"
 import Hero3 from "../assets/Hero3.jpeg"
 import Typist from "react-typist"
-import { TypistLoop } from "./"
+import { TypeWriter } from "./"
 
 import { SantanderIcon, DffrntIcon, Acclr8Icon, Rae } from "../assets"
 import { useResponsiveLayout } from "../utils/hooks"
@@ -49,7 +49,7 @@ const Hero = () => {
         >
           <H1 styledAs={isLayoutSmall ? "h3" : "h1"}>
             A more efficient way to&nbsp;
-            <TypistLoop interval={500} index={index} setIndex={setIndex}>
+            <TypeWriter interval={500} index={index} setIndex={setIndex}>
               {animatedText.map(text => (
                 <Typist
                   key={text}
@@ -66,7 +66,7 @@ const Hero = () => {
                   />
                 </Typist>
               ))}
-            </TypistLoop>
+            </TypeWriter>
             <BlinkingCursor>|</BlinkingCursor>
           </H1>
           <Spacer height={theme.spacers.size32} />

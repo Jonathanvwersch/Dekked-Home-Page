@@ -1,6 +1,6 @@
 import * as React from "react"
 
-const TypistLoop = ({ interval = 1000, index, setIndex, children }) => {
+const TypeWriter = ({ interval = 1000, index, setIndex, children }) => {
   const [mounted, setMounted] = React.useState(false)
   const [timer, setTimer] = React.useState()
 
@@ -27,4 +27,4 @@ const TypistLoop = ({ interval = 1000, index, setIndex, children }) => {
   )
 }
 
-export default TypistLoop
+export default TypeWriter
