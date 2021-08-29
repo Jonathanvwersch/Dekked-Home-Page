@@ -52,7 +52,7 @@ const Footer = () => {
               height="100%"
             >
               <Link style={{ display: "flex" }} href="/">
-                <FullLogoIcon color="white" width="120px" />
+                <FullLogoIcon color="white" height="20px" />
               </Link>
               <Flex justifyContent="center">
                 <Link href="https://twitter.com/dekkedapp">

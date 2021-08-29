@@ -46,7 +46,7 @@ const Header = () => {
                   href="/"
                   aria-label="Home page"
                 >
-                  <FullLogoIcon color={theme.colors.primary} width="150px" />
+                  <FullLogoIcon color={theme.colors.primary} height="30px" />
                 </StyledLink>
                 <Spacer width={theme.spacers.size32} />
                 <StyledAnchorLink href="#features">Features</StyledAnchorLink>
