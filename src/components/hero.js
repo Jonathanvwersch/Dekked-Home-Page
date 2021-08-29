@@ -16,7 +16,12 @@ import Hero3 from "../assets/Hero3.jpeg"
 import Typist from "react-typist"
 import { TypeWriter } from "./"
 
-import { SantanderIcon, DffrntIcon, Acclr8Icon, Rae } from "../assets"
+import {
+  SantanderIcon,
+  DffrntIcon,
+  Acclr8Icon,
+  RoyalAcademyEngineering,
+} from "../assets"
 import { useResponsiveLayout } from "../utils/hooks"
 import { LAYOUT_XLARGE, LAYOUT_SMALL } from "../utils/hooks/useResponsiveLayout"
 
@@ -112,7 +117,7 @@ const Hero = () => {
             <Acclr8Icon />
           </Box>
           <Box p={theme.spacers.size8} pb={theme.spacers.size16}>
-            <Rae />
+            <RoyalAcademyEngineering />
           </Box>
         </Flex>
       </SubHero>
