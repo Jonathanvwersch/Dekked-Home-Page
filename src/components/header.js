@@ -56,7 +56,6 @@ const Header = () => {
               <Flex
                 alignItems="center"
                 width="auto"
-                aria-label="hello"
                 style={{ position: "sticky" }}
               >
                 <StyledLink
@@ -87,7 +86,7 @@ const Header = () => {
                 href="/"
                 aria-label="Home page"
               >
-                <FullLogoIcon color={theme.colors.primary} width="175px" />
+                <FullLogoIcon color={theme.colors.primary} height="25px" />
               </StyledLink>
               <IconActive
                 handleClick={() => setShowMenu(prevState => !prevState)}

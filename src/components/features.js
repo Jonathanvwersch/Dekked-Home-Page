@@ -22,7 +22,7 @@ const Features = () => {
       <Flex
         className="innerContainer"
         flexDirection="column"
-        pb={isLayoutSmall ? theme.spacers.size32 : theme.spacers.size48}
+        pb={isLayoutSmall ? theme.spacers.size48 : theme.spacers.size64}
         pt={!isLayoutSmall && theme.spacers.size64}
       >
         <Flex

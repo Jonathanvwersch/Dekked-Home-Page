@@ -11,18 +11,20 @@ export const LAYOUT_XLARGE = "xLarge"
 
 const useResponsiveLayout = () => {
   const appLayout = () => {
-    if (window.innerWidth < BREAKPOINT_SMALL) return LAYOUT_SMALL
-    else if (
-      window.innerWidth >= BREAKPOINT_SMALL &&
-      window.innerWidth < BREAKPOINT_MEDIUM
-    )
-      return LAYOUT_MEDIUM
-    else if (
-      window.innerWidth >= BREAKPOINT_MEDIUM &&
-      window.innerWidth <= BREAKPOINT_LARGE
-    )
-      return LAYOUT_LARGE
-    else return LAYOUT_XLARGE
+    if (window) {
+      if (window.innerWidth < BREAKPOINT_SMALL) return LAYOUT_SMALL
+      else if (
+        window.innerWidth >= BREAKPOINT_SMALL &&
+        window.innerWidth < BREAKPOINT_MEDIUM
+      )
+        return LAYOUT_MEDIUM
+      else if (
+        window.innerWidth >= BREAKPOINT_MEDIUM &&
+        window.innerWidth <= BREAKPOINT_LARGE
+      )
+        return LAYOUT_LARGE
+      else return LAYOUT_XLARGE
+    }
   }
 
   const [layout, setLayout] = useState(appLayout())
@@ -30,6 +32,7 @@ const useResponsiveLayout = () => {
   useEffect(() => {
     const handleResize = () => setLayout(appLayout())
     window.addEventListener("resize", handleResize)
+
     return () => window.removeEventListener("resize", handleResize)
   }, [window.innerWidth])
 

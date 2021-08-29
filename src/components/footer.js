@@ -52,7 +52,7 @@ const Footer = () => {
               height="100%"
             >
               <Link style={{ display: "flex" }} href="/">
-                <FullLogoIcon color="white" height="20px" />
+                <FullLogoIcon height="20px" color="white" />
               </Link>
               <Flex justifyContent="center">
                 <Link href="https://twitter.com/dekkedapp">
@@ -83,7 +83,7 @@ const Footer = () => {
                 height="100%"
               >
                 <Link style={{ display: "flex" }} href="/">
-                  <FullLogoIcon color="white" width="120px" />
+                  <FullLogoIcon color="white" height="26px" />
                 </Link>
                 <Spacer height={theme.spacers.size16} />
                 {copyRight}

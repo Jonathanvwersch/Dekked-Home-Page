@@ -12,9 +12,7 @@ const Layout = ({ children, noFooterHeader }) => {
   return (
     <>
       <GlobalStyle />
-      {loading ? (
-        <FullPageLoadingSpinner />
-      ) : (
+      {loading ? null : (
         <>
           {!noFooterHeader && <Header />}
           <main>{children}</main>

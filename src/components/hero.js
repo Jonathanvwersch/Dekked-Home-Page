@@ -130,7 +130,6 @@ const StyledHero = styled(Flex)``
 const HeroImage = styled.img`
   border-radius: 10px;
   box-shadow: ${({ theme }) => theme.boxShadow};
-  height: 100%;
   width: 100%;
 `
 

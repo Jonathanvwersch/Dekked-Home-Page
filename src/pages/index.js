@@ -15,11 +15,13 @@ const IndexPage = () => {
     }
   }
 
+  const isLoggedIn = getSessionCookie()
+
   React.useEffect(() => {
-    if (getSessionCookie()) {
-      window.location.replace("https://app.dekked.com")
+    if (isLoggedIn) {
+      // window.location.replace("https://app.dekked.com")
     }
-  }, [])
+  }, [isLoggedIn])
 
   return (
     <ThemeProvider theme={theme()}>
