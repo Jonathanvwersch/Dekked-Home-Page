@@ -15,7 +15,7 @@ const IndexPage = () => {
     }
   }
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     if (getSessionCookie()) {
       window.location.replace("https://app.dekked.com")
     }
