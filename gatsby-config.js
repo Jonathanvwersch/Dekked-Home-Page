@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `A more efficient way to learn`,
-    description: `Create notes and flashcards that are linked to one another. Then study them with or without spaced repetition. Sign up to join our exclusive beta program launching in March.`,
+    description: `Create notes and flashcards that are linked to one another. Then study them with or without spaced repetition.`,
     author: `@dekkedapp`,
   },
   plugins: [

@@ -10,8 +10,6 @@ const IndexPage = () => (
       <Hero />
       <GetStarted />
       <Features />
-      {/* <Testimonials /> */}
-      {/* <MeetTheTeam /> */}
       <SignUp />
     </Layout>
   </ThemeProvider>

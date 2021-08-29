@@ -41,7 +41,11 @@ const Header = () => {
           {!isSmallOrMedium ? (
             <>
               <Flex alignItems="center" width="auto">
-                <StyledLink style={{ display: "flex" }} href="/">
+                <StyledLink
+                  style={{ display: "flex" }}
+                  href="/"
+                  aria-label="Home page"
+                >
                   <FullLogoIcon color={theme.colors.primary} width="150px" />
                 </StyledLink>
                 <Spacer width={theme.spacers.size32} />
@@ -78,11 +82,16 @@ const Header = () => {
             </>
           ) : (
             <Flex alignItems="center" justifyContent="space-between">
-              <StyledLink style={{ display: "flex" }} href="/">
+              <StyledLink
+                style={{ display: "flex" }}
+                href="/"
+                aria-label="Home page"
+              >
                 <FullLogoIcon color={theme.colors.primary} width="175px" />
               </StyledLink>
               <IconActive
                 handleClick={() => setShowMenu(prevState => !prevState)}
+                ariaLabel={showMenu ? "Close menu" : "Open menu"}
               >
                 {showMenu ? (
                   <CloseIcon size="40px" />
