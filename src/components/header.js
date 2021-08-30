@@ -93,9 +93,9 @@ const Header = () => {
                 ariaLabel={showMenu ? "Close menu" : "Open menu"}
               >
                 {showMenu ? (
-                  <CloseIcon size="40px" />
+                  <CloseIcon size="32px" />
                 ) : (
-                  <HamburgerMenuIcon size="40px" />
+                  <HamburgerMenuIcon size="32px" />
                 )}
               </IconActive>
             </Flex>
