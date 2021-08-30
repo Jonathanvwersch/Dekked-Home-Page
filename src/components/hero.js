@@ -56,11 +56,7 @@ const Hero = () => {
             A more efficient way to&nbsp;
             <TypeWriter interval={500} index={index} setIndex={setIndex}>
               {animatedText.map(text => (
-                <Typist
-                  key={text}
-                  style={{ display: "inline" }}
-                  startDelay={500}
-                >
+                <Typist key={text} style={{ display: "inline" }}>
                   <AnimatedText style={{ color: theme.colors.primary }}>
                     {text}
                   </AnimatedText>
