@@ -111,7 +111,7 @@ const Header = ({ privacyPolicy }) => {
       </TopBar>
       {showMenu ? (
         <HiddenMenu>
-          {privacyPolicy ? (
+          {!privacyPolicy ? (
             <>
               <StyledAnchorLink
                 onClick={() => setShowMenu(false)}
