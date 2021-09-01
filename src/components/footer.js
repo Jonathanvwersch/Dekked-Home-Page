@@ -15,6 +15,7 @@ import {
   SIZES,
 } from "dekked-design-system"
 import { LAYOUT_SMALL } from "../utils/hooks/useResponsiveLayout"
+import { Link as InternalLink } from "gatsby"
 
 import { useResponsiveLayout } from "../utils/hooks"
 
@@ -32,13 +33,7 @@ const Footer = () => {
   )
 
   const privacyPolicy = (
-    <Link
-      fontColor="white"
-      fontSize={theme.typography.fontSizes.size14}
-      href="https://dekked.com/legal"
-    >
-      Privacy policy
-    </Link>
+    <StyledInternalLink to="/privacy">Privacy policy</StyledInternalLink>
   )
 
   return (
@@ -51,9 +46,9 @@ const Footer = () => {
               justifyContent="space-between"
               height="100%"
             >
-              <Link style={{ display: "flex" }} href="/">
+              <InternalLink style={{ display: "flex" }} to="/">
                 <FullLogoIcon height="20px" color="white" />
-              </Link>
+              </InternalLink>
               <Flex justifyContent="center">
                 <Link href="https://twitter.com/dekkedapp">
                   <TwitterIcon color="white" size={SIZES.XLARGE} />
@@ -82,9 +77,9 @@ const Footer = () => {
                 justifyContent="space-between"
                 height="100%"
               >
-                <Link style={{ display: "flex" }} href="/">
+                <InternalLink style={{ display: "flex" }} to="/">
                   <FullLogoIcon color="white" height="26px" />
-                </Link>
+                </InternalLink>
                 <Spacer height={theme.spacers.size16} />
                 {copyRight}
               </Flex>
@@ -169,6 +164,18 @@ const Footer = () => {
     </FooterContainer>
   )
 }
+
+const StyledInternalLink = styled(InternalLink)`
+  color: white;
+  font-size: ${({ theme }) => theme.typography.fontSizes.size14};
+  text-decoration: none;
+  &:hover {
+    color: ${({ theme }) => theme.colors.primary};
+  }
+  &:active {
+    filter: ${({ theme }) => theme.colors.active.filter};
+  }
+`
 
 const StyledFooter = styled.div`
   display: flex;

@@ -11,6 +11,7 @@ import {
   CloseIcon,
   Link,
 } from "dekked-design-system"
+import { Link as InternalLink } from "gatsby"
 import { useResponsiveLayout } from "../utils"
 import { LAYOUT_MEDIUM, LAYOUT_SMALL } from "../utils/hooks/useResponsiveLayout"
 import AnchorLink from "react-anchor-link-smooth-scroll"
@@ -41,13 +42,13 @@ const Header = () => {
           {!isSmallOrMedium ? (
             <>
               <Flex alignItems="center" width="auto">
-                <StyledLink
+                <InternalLink
                   style={{ display: "flex" }}
-                  href="/"
+                  to="/"
                   aria-label="Home page"
                 >
                   <FullLogoIcon color={theme.colors.primary} height="30px" />
-                </StyledLink>
+                </InternalLink>
                 <Spacer width={theme.spacers.size32} />
                 <StyledAnchorLink href="#features">Features</StyledAnchorLink>
                 <Spacer width={theme.spacers.size32} />
@@ -81,13 +82,13 @@ const Header = () => {
             </>
           ) : (
             <Flex alignItems="center" justifyContent="space-between">
-              <StyledLink
+              <InternalLink
                 style={{ display: "flex" }}
-                href="/"
+                to="/"
                 aria-label="Home page"
               >
                 <FullLogoIcon color={theme.colors.primary} height="25px" />
-              </StyledLink>
+              </InternalLink>
               <IconActive
                 handleClick={() => setShowMenu(prevState => !prevState)}
                 ariaLabel={showMenu ? "Close menu" : "Open menu"}
