@@ -11,12 +11,7 @@ const SignUp = () => {
   const isLayoutSmall = layout === LAYOUT_SMALL
 
   return (
-    <section
-      style={{
-        background:
-          "linear-gradient(180deg,rgba(202, 245, 252, 1) 50%,rgba(255, 255, 255, 1) 100%)",
-      }}
-    >
+    <section>
       <Flex
         mb={isLayoutNotXLarge ? theme.spacers.size64 : undefined}
         flexDirection={isLayoutNotXLarge ? "column" : "row"}

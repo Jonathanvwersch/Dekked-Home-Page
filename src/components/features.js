@@ -22,7 +22,7 @@ const Features = () => {
       <Flex
         className="innerContainer"
         flexDirection="column"
-        pb={isLayoutSmall ? theme.spacers.size48 : theme.spacers.size64}
+        pb={isLayoutSmall ? theme.spacers.size80 : theme.spacers.size128}
         pt={!isLayoutSmall && theme.spacers.size64}
       >
         <Flex
@@ -61,7 +61,7 @@ const Features = () => {
           <Flex
             flex="1.5 0 0"
             overflow="hidden"
-            style={{ borderRadius: "16px" }}
+            style={{ borderRadius: "16px", boxShadow: theme.boxShadow }}
           >
             <Video
               src="https://dekked-landing-page.s3.eu-west-2.amazonaws.com/images2/Video1.mp4"
@@ -81,7 +81,7 @@ const Features = () => {
           <Flex
             flex="1.5 0 0"
             overflow="hidden"
-            style={{ borderRadius: "16px" }}
+            style={{ borderRadius: "16px", boxShadow: theme.boxShadow }}
           >
             <Video
               src="https://dekked-landing-page.s3.eu-west-2.amazonaws.com/images2/Video2.mp4"
@@ -159,7 +159,7 @@ const Features = () => {
           <Flex
             flex="1.5 0 0"
             overflow="hidden"
-            style={{ borderRadius: "16px" }}
+            style={{ borderRadius: "16px", boxShadow: theme.boxShadow }}
           >
             <Video
               src="https://dekked-landing-page.s3.eu-west-2.amazonaws.com/images2/Video3.mp4"
@@ -176,7 +176,7 @@ const Features = () => {
           <Flex
             flex="1.5 0 0"
             overflow="hidden"
-            style={{ borderRadius: "16px" }}
+            style={{ borderRadius: "16px", boxShadow: theme.boxShadow }}
           >
             <Video
               src="https://dekked-landing-page.s3.eu-west-2.amazonaws.com/images2/Video4.mp4"

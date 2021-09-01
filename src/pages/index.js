@@ -1,5 +1,13 @@
 import * as React from "react"
-import { Layout, Seo, Hero, GetStarted, SignUp, Features } from "../components"
+import {
+  Layout,
+  Seo,
+  Hero,
+  GetStarted,
+  SignUp,
+  Features,
+  Testimonials,
+} from "../components"
 import { theme } from "dekked-design-system"
 import { ThemeProvider } from "styled-components"
 import Cookies from "js-cookie"
@@ -19,7 +27,7 @@ const IndexPage = () => {
 
   React.useEffect(() => {
     if (isLoggedIn) {
-      // window.location.replace("https://app.dekked.com")
+      window.location.replace("https://app.dekked.com")
     }
   }, [isLoggedIn])
 
@@ -30,6 +38,7 @@ const IndexPage = () => {
         <Hero />
         <GetStarted />
         <Features />
+        {/* <Testimonials /> */}
         <SignUp />
       </Layout>
     </ThemeProvider>
