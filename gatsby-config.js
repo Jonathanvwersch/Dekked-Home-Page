@@ -4,6 +4,9 @@ module.exports = {
     description: `Create notes and flashcards that are linked to one another. Then study them with or without spaced repetition.`,
     author: `@dekkedapp`,
   },
+  flags: {
+    THE_FLAG: false,
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
@@ -48,9 +51,10 @@ module.exports = {
         display: "swap",
       },
     },
+
     `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }
