@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Header, Footer, GlobalStyle } from "./"
-import { FullPageLoadingSpinner } from "dekked-design-system"
 
-const Layout = ({ children, noFooterHeader }) => {
+const Layout = ({ children, noFooterHeader, privacyPolicy }) => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -14,7 +13,7 @@ const Layout = ({ children, noFooterHeader }) => {
       <GlobalStyle />
       {loading ? null : (
         <>
-          {!noFooterHeader && <Header />}
+          {!noFooterHeader && <Header privacyPolicy={privacyPolicy} />}
           <main>{children}</main>
           {!noFooterHeader && <Footer />}
         </>

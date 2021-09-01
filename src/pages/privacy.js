@@ -6,7 +6,7 @@ import { ThemeProvider } from "styled-components"
 const Privacy = () => {
   return (
     <ThemeProvider theme={theme()}>
-      <Layout>
+      <Layout privacyPolicy>
         <Seo title="Privacy policy" />
         <PrivacyPolicy />
       </Layout>

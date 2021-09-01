@@ -16,7 +16,7 @@ import { useResponsiveLayout } from "../utils"
 import { LAYOUT_MEDIUM, LAYOUT_SMALL } from "../utils/hooks/useResponsiveLayout"
 import AnchorLink from "react-anchor-link-smooth-scroll"
 
-const Header = () => {
+const Header = ({ privacyPolicy }) => {
   const theme = useContext(ThemeContext)
   const layout = useResponsiveLayout()
   const [showMenu, setShowMenu] = useState(false)
@@ -50,9 +50,15 @@ const Header = () => {
                   <FullLogoIcon color={theme.colors.primary} height="30px" />
                 </InternalLink>
                 <Spacer width={theme.spacers.size32} />
-                <StyledAnchorLink href="#features">Features</StyledAnchorLink>
-                <Spacer width={theme.spacers.size32} />
-                <StyledAnchorLink href="#contact">Contact</StyledAnchorLink>
+                {!privacyPolicy ? (
+                  <>
+                    <StyledAnchorLink href="#features">
+                      Features
+                    </StyledAnchorLink>
+                    <Spacer width={theme.spacers.size32} />
+                    <StyledAnchorLink href="#contact">Contact</StyledAnchorLink>
+                  </>
+                ) : null}
               </Flex>
               <Flex
                 alignItems="center"
@@ -105,12 +111,22 @@ const Header = () => {
       </TopBar>
       {showMenu ? (
         <HiddenMenu>
-          <StyledAnchorLink onClick={() => setShowMenu(false)} href="#features">
-            Features
-          </StyledAnchorLink>
-          <StyledAnchorLink onClick={() => setShowMenu(false)} href="#contact">
-            Contact
-          </StyledAnchorLink>
+          {privacyPolicy ? (
+            <>
+              <StyledAnchorLink
+                onClick={() => setShowMenu(false)}
+                href="#features"
+              >
+                Features
+              </StyledAnchorLink>
+              <StyledAnchorLink
+                onClick={() => setShowMenu(false)}
+                href="#contact"
+              >
+                Contact
+              </StyledAnchorLink>
+            </>
+          ) : null}
           <StyledLink href="https://app.dekked.com/login">Log in</StyledLink>
           <Spacer height={theme.spacers.size64} />
           <StyledLink href="https://app.dekked.com/sign-up">

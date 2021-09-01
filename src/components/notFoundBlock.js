@@ -12,6 +12,7 @@ import {
 import { ThemeContext } from "styled-components"
 import { LAYOUT_MEDIUM, LAYOUT_SMALL } from "../utils/hooks/useResponsiveLayout"
 import { useResponsiveLayout } from "../utils/hooks"
+import { Link } from "gatsby"
 
 const NotFoundBlock = () => {
   const theme = React.useContext(ThemeContext)
@@ -42,14 +43,11 @@ const NotFoundBlock = () => {
             Sorry, we can't seem to find the page you're looking for
           </Text>
           <Spacer height={theme.spacers.size32} />
-          <Button
-            as="a"
-            size={SIZES.LARGE}
-            buttonStyle={BUTTON_THEME.SECONDARY}
-            href="https://dekked.com"
-          >
-            Go home
-          </Button>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Button size={SIZES.LARGE} buttonStyle={BUTTON_THEME.SECONDARY}>
+              Go home
+            </Button>
+          </Link>
         </Flex>
       </Flex>
       {!isSmallOrMedium && <Flex flexGrow={1} displayFlex="1 0 0" />}
