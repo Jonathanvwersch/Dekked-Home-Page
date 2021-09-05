@@ -159,10 +159,11 @@ const Hero = () => {
 const HeroDiagonals = styled.img``
 
 const HeroText = styled(H1)`
-  background-color: transparent;
-  -webkit-background-clip: text;
-  background-image: linear-gradient(267.53deg, #00b6ce 27.79%, #048293 71.12%);
+  background: linear-gradient(267.53deg, #00b6ce 27.79%, #048293 71.12%);
+  display: inline-block;
   -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 `
 
 const StyledHero = styled(Flex)``
@@ -182,6 +183,10 @@ const HeroImage = styled.img`
 
 const AnimatedText = styled.p`
   display: inline-block;
+  background: linear-gradient(267.53deg, #00b6ce 27.79%, #048293 71.12%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 `
 
 const heroAnimation = keyframes`
