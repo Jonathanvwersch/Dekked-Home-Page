@@ -11,22 +11,24 @@ const GetStarted = () => {
   const isLayoutSmall = layout === LAYOUT_SMALL
 
   return (
-    <section>
+    <section style={{ background: "#d5fafc" }}>
       <Flex
         className="innerContainer"
         flexDirection="column"
-        pb={isLayoutSmall ? theme.spacers.size32 : theme.spacers.size48}
-        pt={isLayoutSmall ? theme.spacers.size64 : theme.spacers.size128}
+        pt={theme.spacers.size64}
         maxWidth={isLayoutSmall ? "400px" : undefined}
       >
-        <H2 textAlign="center" styledAs={isLayoutSmall ? "h4" : "h3"}>
-          An integrated flashcard and notetaking platform
+        <H2 styledAs={isLayoutSmall ? "h4" : "h2"} textAlign="center">
+          Getting started with Dekked is easy
         </H2>
+        <Spacer
+          height={isLayoutSmall ? theme.spacers.size48 : theme.spacers.size80}
+        />
+
         <Flex
           width="100%"
           justifyContent={isXLarge ? "space-between" : "center"}
           flexWrap="wrap"
-          mt={isLayoutSmall ? theme.spacers.size64 : theme.spacers.size128}
         >
           <Flex
             flexDirection="column"

@@ -36,9 +36,9 @@ const IndexPage = () => {
       <Layout>
         <Seo title="Dekked" />
         <Hero />
-        <GetStarted />
         <Features />
-        {/* <Testimonials /> */}
+        <Testimonials />
+        <GetStarted />
         <SignUp />
       </Layout>
     </ThemeProvider>

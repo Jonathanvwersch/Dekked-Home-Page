@@ -7,8 +7,8 @@ const PrivacyPolicy = () => {
       className="innerContainer"
       style={{
         flexDirection: "column",
-        paddingTop: "128px",
-        paddingBottom: "128px",
+        paddingTop: "80px",
+        paddingBottom: "80px",
         alignItems: "flex-start",
       }}
     >
@@ -22,6 +22,7 @@ const PrivacyPolicy = () => {
         Service and tells You about Your privacy rights and how the law protects
         You.
       </p>
+      <Spacer height="8px" />
       <p>
         We use Your Personal data to provide and improve the Service. By using
         the Service, You agree to the collection and use of information in
@@ -39,10 +40,8 @@ const PrivacyPolicy = () => {
       <Spacer height="24px" />
       <h1>Interpretation and Definitions</h1>
       <Spacer height="24px" />
-
       <h2>Interpretation</h2>
       <Spacer height="24px" />
-
       <p>
         The words of which the initial letter is capitalized have meanings
         defined under the following conditions. The following definitions shall
@@ -50,11 +49,10 @@ const PrivacyPolicy = () => {
         in plural.
       </p>
       <Spacer height="20px" />
-
       <h2>Definitions</h2>
       <Spacer height="20px" />
-
       <p>For the purposes of this Privacy Policy:</p>
+      <Spacer height="8px" />
       <ul>
         <li>
           <p>
@@ -62,6 +60,8 @@ const PrivacyPolicy = () => {
             access our Service or parts of our Service.
           </p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>
             <strong>Company</strong> (referred to as either &quot;the
@@ -69,6 +69,8 @@ const PrivacyPolicy = () => {
             this Agreement) refers to Dekked.
           </p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>
             <strong>Cookies</strong> are small files that are placed on Your
@@ -77,28 +79,38 @@ const PrivacyPolicy = () => {
             uses.
           </p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>
             <strong>Country</strong> refers to: United Kingdom
           </p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>
             <strong>Device</strong> means any device that can access the Service
             such as a computer, a cellphone or a digital tablet.
           </p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>
             <strong>Personal Data</strong> is any information that relates to an
             identified or identifiable individual.
           </p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>
             <strong>Service</strong> refers to the Website.
           </p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>
             <strong>Service Provider</strong> means any natural or legal person
@@ -109,6 +121,8 @@ const PrivacyPolicy = () => {
             Company in analyzing how the Service is used.
           </p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>
             <strong>Usage Data</strong> refers to data collected automatically,
@@ -116,6 +130,8 @@ const PrivacyPolicy = () => {
             infrastructure itself (for example, the duration of a page visit).
           </p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>
             <strong>Website</strong> refers to Dekked, accessible from{" "}
@@ -129,6 +145,8 @@ const PrivacyPolicy = () => {
             </a>
           </p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>
             <strong>You</strong> means the individual accessing or using the
@@ -136,40 +154,41 @@ const PrivacyPolicy = () => {
             such individual is accessing or using the Service, as applicable.
           </p>
         </li>
+        <Spacer height="8px" />
       </ul>
       <Spacer height="24px" />
-
       <h1>Collecting and Using Your Personal Data</h1>
       <Spacer height="16px" />
-
       <h2>Types of Data Collected</h2>
-
       <Spacer height="16px" />
       <h3>Personal Data</h3>
       <Spacer height="16px" />
-
       <p>
         While using Our Service, We may ask You to provide Us with certain
         personally identifiable information that can be used to contact or
         identify You. Personally identifiable information may include, but is
         not limited to:
       </p>
+      <Spacer height="8px" />
       <ul>
         <li>
           <p>Email address</p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>First name and last name</p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>Usage Data</p>
         </li>
+        <Spacer height="8px" />
       </ul>
-
       <Spacer height="16px" />
       <h3>Usage Data</h3>
       <Spacer height="16px" />
-
       <p>Usage Data is collected automatically when using the Service.</p>
       <p>
         Usage Data may include information such as Your Device's Internet
@@ -191,18 +210,16 @@ const PrivacyPolicy = () => {
         visit our Service or when You access the Service by or through a mobile
         device.
       </p>
-
       <Spacer height="16px" />
-
       <h3>Tracking Technologies and Cookies</h3>
       <Spacer height="16px" />
-
       <p>
         We use Cookies and similar tracking technologies to track the activity
         on Our Service and store certain information. Tracking technologies used
         are beacons, tags, and scripts to collect and track information and to
         improve and analyze Our Service. The technologies We use may include:
       </p>
+      <Spacer height="8px" />
       <ul>
         <li>
           <strong>Cookies or Browser Cookies.</strong> A cookie is a small file
@@ -212,23 +229,8 @@ const PrivacyPolicy = () => {
           Service. Unless you have adjusted Your browser setting so that it will
           refuse Cookies, our Service may use Cookies.
         </li>
-        <li>
-          <strong>Flash Cookies.</strong> Certain features of our Service may
-          use local stored objects (or Flash Cookies) to collect and store
-          information about Your preferences or Your activity on our Service.
-          Flash Cookies are not managed by the same browser settings as those
-          used for Browser Cookies. For more information on how You can delete
-          Flash Cookies, please read &quot;Where can I change the settings for
-          disabling, or deleting local shared objects?&quot; available at{" "}
-          <a
-            href="https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_"
-            rel="external nofollow noopener"
-            target="_blank"
-            rel="noreferrer"
-          >
-            https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_
-          </a>
-        </li>
+        <Spacer height="8px" />
+
         <li>
           <strong>Web Beacons.</strong> Certain sections of our Service and our
           emails may contain small electronic files known as web beacons (also
@@ -238,6 +240,7 @@ const PrivacyPolicy = () => {
           example, recording the popularity of a certain section and verifying
           system and server integrity).
         </li>
+        <Spacer height="8px" />
       </ul>
       <p>
         Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies.
@@ -253,10 +256,12 @@ const PrivacyPolicy = () => {
         </a>
         .
       </p>
+      <Spacer height="8px" />
       <p>
         We use both Session and Persistent Cookies for the purposes set out
         below:
-      </p>
+      </p>{" "}
+      <Spacer height="8px" />
       <ul>
         <li>
           <p>
@@ -273,6 +278,8 @@ const PrivacyPolicy = () => {
             provide You with those services.
           </p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>
             <strong>Cookies Policy / Notice Acceptance Cookies</strong>
@@ -284,6 +291,8 @@ const PrivacyPolicy = () => {
             cookies on the Website.
           </p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>
             <strong>Functionality Cookies</strong>
@@ -298,6 +307,7 @@ const PrivacyPolicy = () => {
             your preferences every time You use the Website.
           </p>
         </li>
+        <Spacer height="8px" />
       </ul>
       <p>
         For more information about the cookies we use and your choices regarding
@@ -307,8 +317,8 @@ const PrivacyPolicy = () => {
       <Spacer height="20px" />
       <h2>Use of Your Personal Data</h2>
       <Spacer height="20px" />
-
       <p>The Company may use Personal Data for the following purposes:</p>
+      <Spacer height="8px" />
       <ul>
         <li>
           <p>
@@ -316,6 +326,8 @@ const PrivacyPolicy = () => {
             monitor the usage of our Service.
           </p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>
             <strong>To manage Your Account:</strong> to manage Your registration
@@ -324,6 +336,8 @@ const PrivacyPolicy = () => {
             available to You as a registered user.
           </p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>
             <strong>For the performance of a contract:</strong> the development,
@@ -332,6 +346,8 @@ const PrivacyPolicy = () => {
             contract with Us through the Service.
           </p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>
             <strong>To contact You:</strong> To contact You by email, telephone
@@ -342,6 +358,8 @@ const PrivacyPolicy = () => {
             when necessary or reasonable for their implementation.
           </p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>
             <strong>To provide You</strong> with news, special offers and
@@ -351,12 +369,16 @@ const PrivacyPolicy = () => {
             information.
           </p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>
             <strong>To manage Your requests:</strong> To attend and manage Your
             requests to Us.
           </p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>
             <strong>For business transfers:</strong> We may use Your information
@@ -368,6 +390,8 @@ const PrivacyPolicy = () => {
             transferred.
           </p>
         </li>
+        <Spacer height="8px" />
+
         <li>
           <p>
             <strong>For other purposes</strong>: We may use Your information for
@@ -377,20 +401,26 @@ const PrivacyPolicy = () => {
             your experience.
           </p>
         </li>
+        <Spacer height="8px" />
       </ul>
       <p>We may share Your personal information in the following situations:</p>
+      <Spacer height="8px" />
       <ul>
         <li>
           <strong>With Service Providers:</strong> We may share Your personal
           information with Service Providers to monitor and analyze the use of
           our Service, to contact You.
         </li>
+        <Spacer height="8px" />
+
         <li>
           <strong>For business transfers:</strong> We may share or transfer Your
           personal information in connection with, or during negotiations of,
           any merger, sale of Company assets, financing, or acquisition of all
           or a portion of Our business to another company.
         </li>
+        <Spacer height="8px" />
+
         <li>
           <strong>With Affiliates:</strong> We may share Your information with
           Our affiliates, in which case we will require those affiliates to
@@ -398,27 +428,32 @@ const PrivacyPolicy = () => {
           any other subsidiaries, joint venture partners or other companies that
           We control or that are under common control with Us.
         </li>
+        <Spacer height="8px" />
+
         <li>
           <strong>With business partners:</strong> We may share Your information
           with Our business partners to offer You certain products, services or
           promotions.
         </li>
+        <Spacer height="8px" />
+
         <li>
           <strong>With other users:</strong> when You share personal information
           or otherwise interact in the public areas with other users, such
           information may be viewed by all users and may be publicly distributed
           outside.
         </li>
+        <Spacer height="8px" />
+
         <li>
           <strong>With Your consent</strong>: We may disclose Your personal
           information for any other purpose with Your consent.
         </li>
+        <Spacer height="8px" />
       </ul>
       <Spacer height="20px" />
-
       <h2>Retention of Your Personal Data</h2>
       <Spacer height="20px" />
-
       <p>
         The Company will retain Your Personal Data only for as long as is
         necessary for the purposes set out in this Privacy Policy. We will
@@ -427,6 +462,7 @@ const PrivacyPolicy = () => {
         data to comply with applicable laws), resolve disputes, and enforce our
         legal agreements and policies.
       </p>
+      <Spacer height="8px" />
       <p>
         The Company will also retain Usage Data for internal analysis purposes.
         Usage Data is generally retained for a shorter period of time, except
@@ -435,10 +471,8 @@ const PrivacyPolicy = () => {
         data for longer time periods.
       </p>
       <Spacer height="20px" />
-
       <h2>Transfer of Your Personal Data</h2>
       <Spacer height="20px" />
-
       <p>
         Your information, including Personal Data, is processed at the Company's
         operating offices and in any other places where the parties involved in
@@ -447,6 +481,7 @@ const PrivacyPolicy = () => {
         state, province, country or other governmental jurisdiction where the
         data protection laws may differ than those from Your jurisdiction.
       </p>
+      <Spacer height="8px" />
       <p>
         Your consent to this Privacy Policy followed by Your submission of such
         information represents Your agreement to that transfer.
@@ -459,57 +494,55 @@ const PrivacyPolicy = () => {
         security of Your data and other personal information.
       </p>
       <Spacer height="20px" />
-
       <h2>Disclosure of Your Personal Data</h2>
       <Spacer height="20px" />
-
       <h3>Business Transactions</h3>
       <Spacer height="16px" />
-
       <p>
         If the Company is involved in a merger, acquisition or asset sale, Your
         Personal Data may be transferred. We will provide notice before Your
         Personal Data is transferred and becomes subject to a different Privacy
         Policy.
       </p>
-
       <Spacer height="16px" />
-
       <h3>Law enforcement</h3>
       <Spacer height="16px" />
-
       <p>
         Under certain circumstances, the Company may be required to disclose
         Your Personal Data if required to do so by law or in response to valid
         requests by public authorities (e.g. a court or a government agency).
       </p>
-
       <Spacer height="16px" />
-
       <h3>Other legal requirements</h3>
       <Spacer height="16px" />
-
       <p>
         The Company may disclose Your Personal Data in the good faith belief
         that such action is necessary to:
       </p>
+      <Spacer height="8px" />
       <ul>
         <li>Comply with a legal obligation</li>
+        <Spacer height="8px" />
+
         <li>Protect and defend the rights or property of the Company</li>
+        <Spacer height="8px" />
+
         <li>
           Prevent or investigate possible wrongdoing in connection with the
           Service
         </li>
+        <Spacer height="8px" />
+
         <li>
           Protect the personal safety of Users of the Service or the public
         </li>
+        <Spacer height="8px" />
+
         <li>Protect against legal liability</li>
       </ul>
       <Spacer height="20px" />
-
       <h2>Security of Your Personal Data</h2>
       <Spacer height="20px" />
-
       <p>
         The security of Your Personal Data is important to Us, but remember that
         no method of transmission over the Internet, or method of electronic
@@ -518,10 +551,8 @@ const PrivacyPolicy = () => {
         security.
       </p>
       <Spacer height="24px" />
-
       <h1>Children's Privacy</h1>
       <Spacer height="24px" />
-
       <p>
         Our Service does not address anyone under the age of 13. We do not
         knowingly collect personally identifiable information from anyone under
@@ -538,10 +569,8 @@ const PrivacyPolicy = () => {
         information.
       </p>
       <Spacer height="24px" />
-
       <h1>Links to Other Websites</h1>
       <Spacer height="24px" />
-
       <p>
         Our Service may contain links to other websites that are not operated by
         Us. If You click on a third party link, You will be directed to that
@@ -553,10 +582,8 @@ const PrivacyPolicy = () => {
         privacy policies or practices of any third party sites or services.
       </p>
       <Spacer height="24px" />
-
       <h1>Changes to this Privacy Policy</h1>
       <Spacer height="24px" />
-
       <p>
         We may update Our Privacy Policy from time to time. We will notify You
         of any changes by posting the new Privacy Policy on this page.
@@ -572,13 +599,12 @@ const PrivacyPolicy = () => {
         posted on this page.
       </p>
       <Spacer height="24px" />
-
       <h1>Contact Us</h1>
       <Spacer height="24px" />
-
       <p>
         If you have any questions about this Privacy Policy, You can contact us:
       </p>
+      <Spacer height="8px" />
       <ul>
         <li>By email: team@dekked.app</li>
       </ul>

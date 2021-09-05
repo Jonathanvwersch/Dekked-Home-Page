@@ -37,11 +37,16 @@ const Header = ({ privacyPolicy }) => {
 
   return (
     <>
-      <TopBar style={topBarStyles}>
-        <Container className="innerContainer">
+      <TopBar style={topBarStyles} showMenu={showMenu}>
+        <Container
+          showMenu={showMenu}
+          className="innerContainer"
+          justifyContent="space-between"
+          flexDirection={showMenu ? "column" : "row"}
+        >
           {!isSmallOrMedium ? (
             <>
-              <Flex alignItems="center" width="auto">
+              <Flex alignItems="center" width="auto" as="nav">
                 <InternalLink
                   style={{ display: "flex" }}
                   to="/"
@@ -60,11 +65,7 @@ const Header = ({ privacyPolicy }) => {
                   </>
                 ) : null}
               </Flex>
-              <Flex
-                alignItems="center"
-                width="auto"
-                style={{ position: "sticky" }}
-              >
+              <Flex alignItems="center" width="auto">
                 <StyledLink
                   fontSize={theme.typography.fontSizes.size18}
                   href="https://app.dekked.com/login"
@@ -106,41 +107,43 @@ const Header = ({ privacyPolicy }) => {
                 )}
               </IconActive>
             </Flex>
-          )}{" "}
+          )}
+          {showMenu ? (
+            <HiddenMenu>
+              {!privacyPolicy ? (
+                <>
+                  <StyledAnchorLink
+                    onClick={() => setShowMenu(false)}
+                    href="#features"
+                  >
+                    Features
+                  </StyledAnchorLink>
+                  <StyledAnchorLink
+                    onClick={() => setShowMenu(false)}
+                    href="#contact"
+                  >
+                    Contact
+                  </StyledAnchorLink>
+                </>
+              ) : null}
+              <StyledLink href="https://app.dekked.com/login">
+                Log in
+              </StyledLink>
+              <Spacer height={theme.spacers.size64} />
+              <StyledLink href="https://app.dekked.com/sign-up">
+                <Button
+                  fullWidth
+                  borderRadius={theme.sizes.borderRadius[SIZES.LARGE]}
+                  size={SIZES.LARGE}
+                  fontSize={theme.typography.fontSizes.size18}
+                >
+                  Sign up
+                </Button>
+              </StyledLink>
+            </HiddenMenu>
+          ) : null}
         </Container>
       </TopBar>
-      {showMenu ? (
-        <HiddenMenu>
-          {!privacyPolicy ? (
-            <>
-              <StyledAnchorLink
-                onClick={() => setShowMenu(false)}
-                href="#features"
-              >
-                Features
-              </StyledAnchorLink>
-              <StyledAnchorLink
-                onClick={() => setShowMenu(false)}
-                href="#contact"
-              >
-                Contact
-              </StyledAnchorLink>
-            </>
-          ) : null}
-          <StyledLink href="https://app.dekked.com/login">Log in</StyledLink>
-          <Spacer height={theme.spacers.size64} />
-          <StyledLink href="https://app.dekked.com/sign-up">
-            <Button
-              fullWidth
-              borderRadius={theme.sizes.borderRadius[SIZES.LARGE]}
-              size={SIZES.LARGE}
-              fontSize={theme.typography.fontSizes.size18}
-            >
-              Sign up
-            </Button>
-          </StyledLink>
-        </HiddenMenu>
-      ) : null}
     </>
   )
 }
@@ -155,6 +158,7 @@ const StyledAnchorLink = styled(AnchorLink)`
   &:hover {
     color: ${({ theme }) => theme.colors.primary};
   }
+  transition: all 0.3s ease-in-out;
 
   &:active {
     filter: ${({ theme }) => theme.colors.active.filter};
@@ -162,16 +166,19 @@ const StyledAnchorLink = styled(AnchorLink)`
 `
 
 const HiddenMenu = styled.nav`
-  top: ${({ theme }) => theme.spacers.size64};
   z-index: 99;
   width: 100%;
-  background: white;
-  height: 100vh;
+  background: #dbf9fe;
   display: flex;
-  overflow: hidden;
   flex-direction: column;
-  position: fixed;
-  padding: ${({ theme }) => theme.spacers.size32};
+  left: 0px;
+  top: 5rem;
+  width: 100vw;
+
+  padding-left: ${({ theme }) => theme.spacers.size32};
+  padding-right: ${({ theme }) => theme.spacers.size32};
+  padding-bottom: ${({ theme }) => theme.spacers.size64};
+  height: 100vh;
 
   a:not(:last-of-type) {
     padding: ${({ theme }) => theme.spacers.size32} 0px
@@ -180,19 +187,21 @@ const HiddenMenu = styled.nav`
   }
 `
 
-const Container = styled.div`
+const Container = styled(Flex)`
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  background-color: white;
+  position: ${({ showMenu }) => showMenu && "fixed"};
+  z-index: 10000;
+  box-shadow: ${({ showMenu }) =>
+    showMenu &&
+    "rgb(15 15 15 / 5%) 0px 0px 0px 0px,rgb(15 15 15 / 10%) 0px 0px 0px, rgb(15 15 15 / 20%) 0px 9px 12px"};
+  background-color: #dbf9fe;
 
   padding: ${({ theme }) => theme.spacers.size20}
     ${({ theme }) => theme.spacers.size32};
 `
 
-const TopBar = styled.nav`
-  background-color: white;
-  position: fixed;
+const TopBar = styled.header`
+  background-color: #dbf9fe;
   width: 100%;
   z-index: 100;
 `

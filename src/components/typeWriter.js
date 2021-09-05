@@ -8,7 +8,7 @@ const TypeWriter = ({ interval = 1000, index, setIndex, children }) => {
     setMounted(true)
     return () => {
       setMounted(false)
-      if (timer) clearTimeout(timer)
+      clearTimeout(timer)
     }
   }, [])
 

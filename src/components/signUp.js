@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { ThemeContext } from "styled-components"
+import styled, { ThemeContext } from "styled-components"
 import { Spacer, H2, Flex, Button, SIZES, Text } from "dekked-design-system"
 import { useResponsiveLayout } from "../utils/hooks"
 import { LAYOUT_SMALL, LAYOUT_XLARGE } from "../utils/hooks/useResponsiveLayout"
@@ -55,8 +55,8 @@ const SignUp = () => {
           {isLayoutNotXLarge && <Spacer height={theme.spacers.size64} />}
         </Flex>
         {!isLayoutSmall && (
-          <img
-            src="https://dekked-landing-page.s3.eu-west-2.amazonaws.com/images2/SignUp.png"
+          <MainImage
+            src="https://dekked-landing-page.s3.eu-west-2.amazonaws.com/images2/SignUp1.png"
             alt="Sign up with Dekked"
             style={{ width: isLayoutNotXLarge ? "80%" : "60%" }}
           />
@@ -65,5 +65,13 @@ const SignUp = () => {
     </section>
   )
 }
+
+const MainImage = styled.img`
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+`
 
 export default SignUp
