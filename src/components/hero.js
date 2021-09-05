@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react"
+import * as Reveal from "react-reveal"
 import styled, { ThemeContext, keyframes } from "styled-components"
 import {
   H1,
@@ -57,90 +58,99 @@ const Hero = () => {
               zIndex: "10",
             }}
           >
-            <HeroText styledAs={isLayoutSmall ? "h3" : "h1"}>
-              A more efficient way to&nbsp;
-              <TypeWriter interval={500} index={index} setIndex={setIndex}>
-                {animatedText.map(text => (
-                  <Typist key={text} style={{ display: "inline" }}>
-                    <AnimatedText
-                      style={{
-                        color: theme.colors.primary,
-                      }}
-                    >
-                      {text}
-                    </AnimatedText>
-                    <Typist.Backspace
-                      delay={4500}
-                      count={text.length}
-                      style={{ display: "inline" }}
-                    />
-                  </Typist>
-                ))}
-              </TypeWriter>
-              <BlinkingCursor>|</BlinkingCursor>
-            </HeroText>
-            <Spacer height={theme.spacers.size32} />
-            <H2 styledAs={isLayoutSmall ? "h6" : "h5"} fontWeight="normal">
-              Create notes and flashcards that are linked to one another. Then
-              study them with or without spaced repetition.
-            </H2>
-            <Spacer height={theme.spacers.size48} />
-            <Button
-              as="a"
-              borderRadius={theme.sizes.borderRadius[SIZES.LARGE]}
-              fontSize={theme.typography.fontSizes.size18}
-              size={isLayoutSmall ? SIZES.LARGE : SIZES.XLARGE}
-              width="200px"
-              href="https://app.dekked.com/sign-up"
-            >
-              Get started for free
-            </Button>
+            <Reveal.Fade delay={500}>
+              <HeroText styledAs={isLayoutSmall ? "h3" : "h1"}>
+                A more efficient way to&nbsp;
+                <TypeWriter interval={500} index={index} setIndex={setIndex}>
+                  {animatedText.map(text => (
+                    <Typist key={text} style={{ display: "inline" }}>
+                      <AnimatedText
+                        style={{
+                          color: theme.colors.primary,
+                        }}
+                      >
+                        {text}
+                      </AnimatedText>
+                      <Typist.Backspace
+                        delay={4500}
+                        count={text.length}
+                        style={{ display: "inline" }}
+                      />
+                    </Typist>
+                  ))}
+                </TypeWriter>
+                <BlinkingCursor>|</BlinkingCursor>
+              </HeroText>
+
+              <Spacer height={theme.spacers.size32} />
+              <H2 styledAs={isLayoutSmall ? "h6" : "h5"} fontWeight="normal">
+                Create notes and flashcards that are linked to one another. Then
+                study them with or without spaced repetition.
+              </H2>
+              <Spacer height={theme.spacers.size48} />
+              <Button
+                as="a"
+                borderRadius={theme.sizes.borderRadius[SIZES.LARGE]}
+                fontSize={theme.typography.fontSizes.size18}
+                size={isLayoutSmall ? SIZES.LARGE : SIZES.XLARGE}
+                width="200px"
+                href="https://app.dekked.com/sign-up"
+              >
+                Get started for free
+              </Button>
+            </Reveal.Fade>
             {isLayoutNotXLarge && <Spacer height={theme.spacers.size48} />}
           </Flex>
+
           <Box
             width={isLayoutNotXLarge ? "100%" : "55%"}
             ml={!isLayoutNotXLarge && theme.spacers.size32}
             style={{ zIndex: "1", position: "relative" }}
           >
-            <HeroImage
-              height={isLayoutNotXLarge ? "100%" : "600px"}
-              width={isLayoutNotXLarge ? "100%" : undefined}
-              src={heroImages[index % heroImages.length]}
-              alt="Hero image"
-            />
+            <Reveal.Fade left>
+              <HeroImage
+                height={isLayoutNotXLarge ? "100%" : "600px"}
+                width={isLayoutNotXLarge ? "100%" : undefined}
+                src={heroImages[index % heroImages.length]}
+                alt="Hero image"
+              />
+            </Reveal.Fade>
           </Box>
         </StyledHero>
         <Flex mb={isLayoutSmall ? theme.spacers.size64 : theme.spacers.size128}>
-          <HeroDiagonals
-            alt="Decorative diagonal elements"
-            src={Diagonals}
-            style={{
-              height: isLayoutSmall ? "100px" : "180px",
-              transform: "rotate(-4deg)",
-              width: isLayoutSmall ? "100vw" : "50vw",
-            }}
-          />
+          <Reveal.Fade left>
+            <HeroDiagonals
+              alt="Decorative diagonal elements"
+              src={Diagonals}
+              style={{
+                height: isLayoutSmall ? "100px" : "180px",
+                transform: "rotate(-4deg)",
+                width: isLayoutSmall ? "100vw" : "50vw",
+              }}
+            />
+          </Reveal.Fade>
         </Flex>
       </MainHero>
-      <SubHero className="innerContainer">
+      <SubHero className="innerContainer subHero">
         <H3 styledAs="h6" fontColor={theme.colors.grey1}>
           Supported by
         </H3>
-
-        <Flex width="100%" justifyContent="space-evenly" flexWrap="wrap">
-          <Box p={theme.spacers.size16}>
-            <SantanderIcon />
-          </Box>
-          <Box p={theme.spacers.size8} pb={theme.spacers.size16}>
-            <DffrntIcon />
-          </Box>
-          <Box p={theme.spacers.size8} pb={theme.spacers.size16}>
-            <Acclr8Icon />
-          </Box>
-          <Box p={theme.spacers.size8} pb={theme.spacers.size16}>
-            <RoyalAcademyEngineering />
-          </Box>
-        </Flex>
+        <Reveal.Fade>
+          <Flex width="100%" justifyContent="space-evenly" flexWrap="wrap">
+            <Box p={theme.spacers.size16}>
+              <SantanderIcon />
+            </Box>
+            <Box p={theme.spacers.size8} pb={theme.spacers.size16}>
+              <DffrntIcon />
+            </Box>
+            <Box p={theme.spacers.size8} pb={theme.spacers.size16}>
+              <Acclr8Icon />
+            </Box>
+            <Box p={theme.spacers.size8} pb={theme.spacers.size16}>
+              <RoyalAcademyEngineering />
+            </Box>
+          </Flex>
+        </Reveal.Fade>
       </SubHero>
     </>
   )
@@ -196,6 +206,10 @@ const SubHero = styled.section`
   flex-direction: column;
   align-items: center;
   padding-bottom: ${({ theme }) => theme.spacers.size128};
+
+  .react-reveal {
+    width: 100%;
+  }
 `
 
 const MainHero = styled.section`
