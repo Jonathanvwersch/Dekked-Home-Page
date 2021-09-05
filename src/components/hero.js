@@ -112,6 +112,7 @@ const Hero = () => {
         </StyledHero>
         <Flex mb={isLayoutSmall ? theme.spacers.size64 : theme.spacers.size128}>
           <HeroDiagonals
+            alt="Decorative diagonal elements"
             src={Diagonals}
             style={{
               height: isLayoutSmall ? "100px" : "180px",

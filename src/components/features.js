@@ -52,7 +52,7 @@ const Features = () => {
         py={theme.spacers.size128}
       >
         <H2 textAlign="center" styledAs={isLayoutSmall ? "h4" : "h2"}>
-          An Integrated Flashcard and Notetaking Platform
+          An integrated flashcard and notetaking platform
         </H2>
         <Spacer height={theme.spacers.size80} />
         <Flex flexDirection="column">
@@ -104,6 +104,7 @@ const Features = () => {
               controlsList="nodownload"
               playsInline
               disablepictureinpicture
+              aria-label="Product demo"
             />
           </VideoBackground>
         </Flex>

@@ -46,7 +46,11 @@ const Footer = () => {
               justifyContent="space-between"
               height="100%"
             >
-              <InternalLink style={{ display: "flex" }} to="/">
+              <InternalLink
+                style={{ display: "flex" }}
+                to="/"
+                aria-label="Home page"
+              >
                 <FullLogoIcon height="20px" color="white" />
               </InternalLink>
               <Flex justifyContent="center">
