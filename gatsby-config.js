@@ -3,6 +3,8 @@ module.exports = {
     title: `A more efficient way to learn`,
     description: `Create notes and flashcards that are linked to one another. Then study them with or without spaced repetition.`,
     author: `@dekkedapp`,
+    keywords:
+      "flashcards, spaced repetition, notes, note-taking, notetaking, note taking, studying, medical student, active recall",
   },
   flags: {
     THE_FLAG: false,

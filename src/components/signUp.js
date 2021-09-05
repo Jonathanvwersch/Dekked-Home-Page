@@ -10,6 +10,8 @@ import {
   Box,
 } from "dekked-design-system"
 import { useResponsiveLayout } from "../utils/hooks"
+import { StaticImage } from "gatsby-plugin-image"
+
 import { LAYOUT_SMALL, LAYOUT_XLARGE } from "../utils/hooks/useResponsiveLayout"
 import * as Reveal from "react-reveal"
 
@@ -68,10 +70,10 @@ const SignUp = () => {
         {!isLayoutSmall && (
           <Box width={isLayoutNotXLarge ? "80%" : "60%"} className="MainImage">
             <Reveal.Fade left isLayoutNotXLarge={isLayoutNotXLarge}>
-              <MainImage
+              <StaticImage
                 src="https://dekked-landing-page.s3.eu-west-2.amazonaws.com/images2/SignUp1.png"
                 alt="Sign up with Dekked"
-                width="100%"
+                className="signUpImage"
               />
             </Reveal.Fade>
           </Box>
@@ -87,14 +89,6 @@ const SignUpContainer = styled.section`
       width: 100%;
     }
   }
-`
-
-const MainImage = styled.img`
-  image-rendering: -moz-crisp-edges; /* Firefox */
-  image-rendering: -o-crisp-edges; /* Opera */
-  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
-  image-rendering: crisp-edges;
-  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
 `
 
 export default SignUp
