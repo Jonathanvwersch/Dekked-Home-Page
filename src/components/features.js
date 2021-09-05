@@ -103,6 +103,7 @@ const Features = () => {
               controls="controls"
               controlsList="nodownload"
               playsInline
+              poster="https://dekked-landing-page.s3.eu-west-2.amazonaws.com/Hero1.png"
               disablepictureinpicture
               aria-label="Product demo"
             />
