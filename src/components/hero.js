@@ -103,7 +103,7 @@ const Hero = () => {
           </Flex>
 
           <Box
-            width={isLayoutNotXLarge ? "100%" : "55%"}
+            width={isLayoutNotXLarge ? "100%" : "50%"}
             ml={!isLayoutNotXLarge && theme.spacers.size32}
             style={{ zIndex: "1", position: "relative" }}
           >
