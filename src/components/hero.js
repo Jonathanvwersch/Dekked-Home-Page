@@ -22,13 +22,20 @@ import {
   RoyalAcademyEngineering,
 } from "../assets"
 import { useResponsiveLayout } from "../utils/hooks"
-import { LAYOUT_XLARGE, LAYOUT_SMALL } from "../utils/hooks/useResponsiveLayout"
+import {
+  LAYOUT_XLARGE,
+  LAYOUT_SMALL,
+  LAYOUT_MEDIUM,
+} from "../utils/hooks/useResponsiveLayout"
 
 const Hero = () => {
   const theme = useContext(ThemeContext)
   const layout = useResponsiveLayout()
   const isLayoutNotXLarge = !(layout === LAYOUT_XLARGE)
+  const isLayoutXLarge = layout === LAYOUT_XLARGE
   const isLayoutSmall = layout === LAYOUT_SMALL
+  const isLayoutMedium = layout === LAYOUT_MEDIUM
+  const isLayoutSmallOrMedium = isLayoutSmall || isLayoutMedium
 
   const [index, setIndex] = useState(0)
   const animatedText = ["take notes", "create flashcards", "study"]
@@ -103,7 +110,9 @@ const Hero = () => {
           </Flex>
 
           <Box
-            width={isLayoutNotXLarge ? "100%" : "50%"}
+            width={
+              isLayoutSmallOrMedium ? "100%" : isLayoutXLarge ? "50%" : "80%"
+            }
             ml={!isLayoutNotXLarge && theme.spacers.size32}
             style={{ zIndex: "1", position: "relative" }}
           >
