@@ -109,7 +109,7 @@ const Hero = () => {
           >
             <Reveal.Fade left>
               <HeroImage
-                height={isLayoutNotXLarge ? "100%" : "600px"}
+                height={isLayoutNotXLarge ? "100%" : "500px"}
                 width={isLayoutNotXLarge ? "100%" : undefined}
                 src={heroImages[index % heroImages.length]}
                 alt="Hero image"

@@ -14,6 +14,7 @@ const TestimonialsVertical = () => {
   const layout = useResponsiveLayout()
   const isSmallOrMedium = layout === LAYOUT_SMALL || layout === LAYOUT_MEDIUM
   const isLayoutSmall = layout === LAYOUT_SMALL
+  const isLayoutMedium = layout === LAYOUT_MEDIUM
 
   const testimonialCard = (width, quote, name, subTextOfName, logo) => (
     <ShadowCard
@@ -61,7 +62,7 @@ const TestimonialsVertical = () => {
         <Wrapper flexDirection="column" className="innerContainer">
           <H2
             style={{ position: "relative", zIndex: "10" }}
-            styledAs={isLayoutSmall && "h4"}
+            styledAs={isLayoutSmall ? "h4" : isLayoutMedium ? "h3" : "h2"}
             textAlign="center"
           >
             We think you'll love Dekked
@@ -81,31 +82,29 @@ const TestimonialsVertical = () => {
         </Wrapper>
         <Spacer height={theme.spacers.size48} />
         <Flex overflow="auto" p={theme.spacers.size16}>
-          <Reveal.Fade>
-            {testimonialCard(
-              "400px",
-              "It really is the best flashcard making app on the internet! I love the simplicity of its layout and it’s so easy to use! Definitely a life saver when it comes to exams, don’t know what I’d do without it.",
-              "Jordan",
-              "Dentistry Student, Glasgow University",
-              <UniGlasgow />
-            )}
-            <Spacer width={theme.spacers.size48} />
-            {testimonialCard(
-              "700px",
-              "Dekked is brilliant for my productivity! I love having all my notes and flashcards in one place, and being able to link them together means that I can instantly reacquaint myself with difficult topics if I'm struggling. Dekked's emphasis on spaced repetition also means that for the first time, I'm making an effort to revise throughout the year, which should stand me in good stead for my upcoming exams. The most useful educational app I've ever used.",
-              "Nick",
-              "Medical Student, University of Edinburgh",
-              <UniEdinburgh />
-            )}
-            <Spacer width={theme.spacers.size32} />
-            {testimonialCard(
-              "400px",
-              "Dekked has changed the way I study forever and has really helped me get through exam season.",
-              "Vicky",
-              "Engineering Student, University of Bath",
-              <UniBath />
-            )}
-          </Reveal.Fade>
+          {testimonialCard(
+            "400px",
+            "It really is the best flashcard making app on the internet! I love the simplicity of its layout and it’s so easy to use! Definitely a life saver when it comes to exams, don’t know what I’d do without it.",
+            "Jordan",
+            "Dentistry Student, Glasgow University",
+            <UniGlasgow />
+          )}
+          <Spacer width={theme.spacers.size48} />
+          {testimonialCard(
+            "700px",
+            "Dekked is brilliant for my productivity! I love having all my notes and flashcards in one place, and being able to link them together means that I can instantly reacquaint myself with difficult topics if I'm struggling. Dekked's emphasis on spaced repetition also means that for the first time, I'm making an effort to revise throughout the year, which should stand me in good stead for my upcoming exams. The most useful educational app I've ever used.",
+            "Nick",
+            "Medical Student, University of Edinburgh",
+            <UniEdinburgh />
+          )}
+          <Spacer width={theme.spacers.size32} />
+          {testimonialCard(
+            "400px",
+            "Dekked has changed the way I study forever and has really helped me get through exam season.",
+            "Vicky",
+            "Engineering Student, University of Bath",
+            <UniBath />
+          )}
         </Flex>
       </Flex>
     </Container>
@@ -121,7 +120,7 @@ const Container = styled.section`
   h2::before {
     content: url(${QuoteMarkMedium});
     position: absolute;
-    left: -${({ theme }) => theme.spacers.size16};
+    left: ${({ theme }) => theme.spacers.size8};
     top: -${({ theme }) => theme.spacers.size16};
     z-index: -1;
   }

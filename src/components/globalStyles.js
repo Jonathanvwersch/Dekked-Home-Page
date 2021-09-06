@@ -10,8 +10,18 @@ const GlobalStyle = createGlobalStyle`
         display: flex;
         align-items: center;
         margin: auto;
-        padding-left: ${({ theme }) => theme.spacers.size32};
-        padding-right: ${({ theme }) => theme.spacers.size32};
+        padding-left: ${({ theme }) => theme.spacers.size64};
+        padding-right: ${({ theme }) => theme.spacers.size64};
+
+         @media only screen and (max-width: 1000px) {
+            padding-left: ${({ theme }) => theme.spacers.size32};
+            padding-right: ${({ theme }) => theme.spacers.size32};
+        }
+
+        @media only screen and (max-width: 400px) {
+            padding-left: ${({ theme }) => theme.spacers.size16};
+            padding-right: ${({ theme }) => theme.spacers.size16};
+        }
     }
 
     body {

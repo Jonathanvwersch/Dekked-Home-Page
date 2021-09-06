@@ -2,7 +2,11 @@ import React, { useContext } from "react"
 import styled, { ThemeContext } from "styled-components"
 import { Spacer, H2, Flex, Text, H3 } from "dekked-design-system"
 import { useResponsiveLayout } from "../utils/hooks"
-import { LAYOUT_SMALL, LAYOUT_XLARGE } from "../utils/hooks/useResponsiveLayout"
+import {
+  LAYOUT_SMALL,
+  LAYOUT_XLARGE,
+  LAYOUT_MEDIUM,
+} from "../utils/hooks/useResponsiveLayout"
 import * as Reveal from "react-reveal"
 
 const GetStarted = () => {
@@ -10,6 +14,7 @@ const GetStarted = () => {
   const layout = useResponsiveLayout()
   const isXLarge = layout === LAYOUT_XLARGE
   const isLayoutSmall = layout === LAYOUT_SMALL
+  const isLayoutMedium = layout === LAYOUT_MEDIUM
 
   return (
     <section style={{ background: "#d5fafc" }}>
@@ -19,7 +24,10 @@ const GetStarted = () => {
         pt={theme.spacers.size64}
         maxWidth={isLayoutSmall ? "400px" : undefined}
       >
-        <H2 styledAs={isLayoutSmall ? "h4" : "h2"} textAlign="center">
+        <H2
+          styledAs={isLayoutSmall ? "h4" : isLayoutMedium ? "h3" : "h2"}
+          textAlign="center"
+        >
           Getting started with Dekked is easy
         </H2>
         <Spacer
@@ -41,7 +49,7 @@ const GetStarted = () => {
               <Image
                 src="https://dekked-landing-page.s3.eu-west-2.amazonaws.com/images2/GetStarted1.png"
                 alt="Sign up"
-                height={isLayoutSmall ? "150px" : "200px"}
+                height={isLayoutSmall ? "150px" : "175px"}
               />
               <H3 styledAs="h4">Sign up</H3>
               <Spacer height={theme.spacers.size4} />
@@ -62,7 +70,7 @@ const GetStarted = () => {
               <Image
                 src="https://dekked-landing-page.s3.eu-west-2.amazonaws.com/images2/GetStarted2.png"
                 alt="Create flashcards and notes"
-                height={isLayoutSmall ? "150px" : "200px"}
+                height={isLayoutSmall ? "150px" : "175px"}
               />
               <H3 styledAs="h4">Create </H3>
               <Spacer height={theme.spacers.size4} />
@@ -83,7 +91,7 @@ const GetStarted = () => {
               <Image
                 src="https://dekked-landing-page.s3.eu-west-2.amazonaws.com/images2/GetStarted3.png"
                 alt="Study smarter"
-                height={isLayoutSmall ? "150px" : "200px"}
+                height={isLayoutSmall ? "150px" : "175px"}
               />
               <H3 styledAs="h4">Study</H3>
               <Spacer height={theme.spacers.size4} />
