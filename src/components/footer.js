@@ -107,7 +107,7 @@ const Footer = () => {
                       fontColor="white"
                       fontSize={theme.typography.fontSizes.size14}
                     >
-                      team@dekked.app
+                      team@dekked.com
                     </Link>
                   </Text>
                 </Flex>
